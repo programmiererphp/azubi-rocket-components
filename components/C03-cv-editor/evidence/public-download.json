@@ -1,0 +1,10 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/28baed1c7ca9bbba4b85eeedd82e5abb61899ecb/components/C03-cv-editor/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "3fcf3baea19d983e89447e5b60d0389cb3de9da37f449f561aced4d352bb732f",
+  "bytes": 28219,
+  "commit_sha": "28baed1c7ca9bbba4b85eeedd82e5abb61899ecb",
+  "recorded_at_utc": "2026-10-21T16:15:40.752563+00:00",
+  "method": "urllib GET without Authorization/cookies; published demo separately browser-tested"
+}

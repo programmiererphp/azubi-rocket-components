@@ -42,8 +42,8 @@
       "tag": "azr-cv-editor",
       "path": "components/C03-cv-editor/manifest.json",
       "version": "0.1.0",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "28baed1c7ca9bbba4b85eeedd82e5abb61899ecb",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"
