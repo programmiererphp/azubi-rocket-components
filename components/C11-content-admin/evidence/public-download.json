@@ -1,0 +1,24 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/21d58d69bc37f81145fcdaf8eb2466f9ff1558a2/components/C11-content-admin/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "dd3c8290eb7386965ca2f0a887e2bc97e7c3ad1493878949a6b5b88170438c22",
+  "bytes": 40513,
+  "commit_sha": "21d58d69bc37f81145fcdaf8eb2466f9ff1558a2",
+  "recorded_at_utc": "2026-10-21T21:04:43.846258+00:00",
+  "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/21d58d69bc37f81145fcdaf8eb2466f9ff1558a2/components/C11-content-admin/dist/index.js",
+      "status": 200,
+      "bytes": 40513,
+      "sha256": "dd3c8290eb7386965ca2f0a887e2bc97e7c3ad1493878949a6b5b88170438c22"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C11-content-admin/dist/index.js",
+      "status": 200,
+      "bytes": 40513,
+      "sha256": "dd3c8290eb7386965ca2f0a887e2bc97e7c3ad1493878949a6b5b88170438c22"
+    }
+  ]
+}
