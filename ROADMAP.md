@@ -25,3 +25,7 @@ C04: isoliert 26/26, öffentlich 26/26; Codecommit 005ed694dfb15e4f7380ebb953ad6
 C05: isoliert 33/33, öffentlich 33/33; Codecommit b6f25f1b632da8c10822c0a7e67890b08f379493.
 
 C06: isoliert 23/23, öffentlich 23/23; Codecommit 76d31d0f26df76899999e761e88870793ce020e5.
+
+C06 v0.1.1: 23 isolated + 23 public tests, anonymous proof SHA 2acd394cea793abe780f98a002ab038e86db08c3.
+
+C07 v0.1.0: 23 isolated + 23 public tests, anonymous proof SHA 2acd394cea793abe780f98a002ab038e86db08c3.

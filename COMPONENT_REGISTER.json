@@ -84,8 +84,8 @@
       "tag": "azr-faq",
       "path": "components/C06-faq/manifest.json",
       "version": "0.1.1",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "2acd394cea793abe780f98a002ab038e86db08c3",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"
@@ -98,8 +98,8 @@
       "tag": "azr-document-check",
       "path": "components/C07-document-check/manifest.json",
       "version": "0.1.0",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "2acd394cea793abe780f98a002ab038e86db08c3",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"

@@ -4,7 +4,7 @@
   "custom_element": "azr-faq",
   "version": "0.1.1",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "bc8d86ee775fb177d09956d1b0251b2a311e19fc751b14a61bec557f60f1f442"
