@@ -10,3 +10,5 @@ All six journey steps must remain visible on every user page, including steps 5 
 - [Delivery and evidence](components/C01-journey-nav/DELIVERY.md)
 
 Tested: Chromium at 1440x900, 390x844 and 320x844; de/en/fr/ru, steps 1–6, keyboard, host state, events, disabled/busy, malformed input and repeated mounting/imports. Firefox/Safari and the full application remain untested.
+
+- [C02 guide · geprüfte Demo](https://programmiererphp.github.io/azubi-rocket-components/components/C02-guide/demo/index.html) — 26 isolierte und 26 Live-Tests bestanden.

@@ -28,8 +28,8 @@
       "tag": "azr-guide",
       "path": "components/C02-guide/manifest.json",
       "version": "0.1.0",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "d83c829df74039812a87ecc9d8486666fb48ee84",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"
