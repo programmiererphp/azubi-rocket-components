@@ -1,0 +1,123 @@
+{
+  "component": "C07",
+  "version": "0.1.0",
+  "artifact_sha256": "3be3e133b5b21e9f1b1b00fe771fc473bf6b0c12a2fc6c01542a0799c51f0756",
+  "passed": true,
+  "url": "http://127.0.0.1:33341/demo/index.html",
+  "recorded_at_utc": "2026-10-21T17:08:56.438Z",
+  "browser": "153.0.8010.0",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 23,
+  "passed_count": 23,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Pinned processor service hash",
+      "passed": true
+    },
+    {
+      "name": "Real PDF and image selection and parsing",
+      "passed": true
+    },
+    {
+      "name": "Image optimization creates a decodable actual JPEG download",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Encrypted and corrupt PDF fail visibly without false success",
+      "passed": true
+    },
+    {
+      "name": "Oversize and excess count rejected atomically",
+      "passed": true
+    },
+    {
+      "name": "Unsupported content rejected by bytes, unsafe filename rendered literally",
+      "passed": true
+    },
+    {
+      "name": "Missing service, busy and synthetic error recover; duplicate action prevented",
+      "passed": true
+    },
+    {
+      "name": "File metadata events exclude all raw data and URLs",
+      "passed": true
+    },
+    {
+      "name": "Disconnect releases files and repeated import is safe",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}

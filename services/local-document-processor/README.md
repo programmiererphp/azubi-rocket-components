@@ -1,0 +1,2 @@
+# LocalDocumentProcessor v0.1.0
+Host-injected pure browser service. Actual PDF page/structure inspection and JPEG/PNG dimensions; explicit local image resizing to max1800px, JPEG0.85. Maximum10MiB/40MP. No OCR, authenticity, translation or semantic-completeness claim. Files stay in browser memory, no network or storage. Document component owns lifecycle/URLs. pdf-lib MIT notices retained. Build uses pinned pdf-lib1.17.1/esbuild0.25.12.

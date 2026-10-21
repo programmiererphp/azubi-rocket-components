@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C07",
+  "custom_element": "azr-document-check",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "3be3e133b5b21e9f1b1b00fe771fc473bf6b0c12a2fc6c01542a0799c51f0756"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "services",
+      "type": "LocalDocumentProcessor|null"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:document-status",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:documents-change",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md",
+  "services": [
+    {
+      "id": "local-document-processor",
+      "version": "0.1.0",
+      "entrypoint": "dist/index.js",
+      "sha256": "2fa6203a5e4b1e2de53a95041cf6ecfe0fd2fdbab00961fd4de8281efc7c8e75",
+      "dependencies": {
+        "pdf-lib": "1.17.1"
+      },
+      "network_calls": 0
+    }
+  ]
+}

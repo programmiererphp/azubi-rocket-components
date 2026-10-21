@@ -98,7 +98,7 @@
       "tag": "azr-document-check",
       "path": "components/C07-document-check/manifest.json",
       "version": "0.1.0",
-      "status": "PLANNED",
+      "status": "ISOLATED_TESTED",
       "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
