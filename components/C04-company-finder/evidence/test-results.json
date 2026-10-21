@@ -1,0 +1,135 @@
+{
+  "component": "C04",
+  "version": "0.1.0",
+  "artifact_sha256": "4d408926ffbe6b3c85073396bd34f64c02919e17cce4e3582bb4fa878cd5930e",
+  "passed": true,
+  "url": "http://127.0.0.1:40683/demo/index.html",
+  "recorded_at_utc": "2026-10-21T16:22:25.295Z",
+  "browser": "153.0.8010.0",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 26,
+  "passed_count": 26,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Real pagination shows 10, then 20, then all 32 records",
+      "passed": true
+    },
+    {
+      "name": "Category plus city filtering and Enter keyboard search",
+      "passed": true
+    },
+    {
+      "name": "Case, umlauts and postal codes match existing records",
+      "passed": true
+    },
+    {
+      "name": "Empty results and reset recover complete list",
+      "passed": true
+    },
+    {
+      "name": "Inferred email is labelled and has no mailto; website remains available",
+      "passed": true
+    },
+    {
+      "name": "Literal legacy email is visible but not falsely verified",
+      "passed": true
+    },
+    {
+      "name": "Selection emits full copied record and updates visible confirmation",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Invalid datasets and unsafe contact/URL schemes are rejected atomically",
+      "passed": true
+    },
+    {
+      "name": "Defensive copies keep supplied records and output separate",
+      "passed": true
+    },
+    {
+      "name": "Loading/error/empty and busy states are honest",
+      "passed": true
+    },
+    {
+      "name": "Hostile company text stays text, not executable markup",
+      "passed": true
+    },
+    {
+      "name": "Reconnect and duplicate import do not duplicate filters events",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}

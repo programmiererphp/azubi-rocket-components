@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C04",
+  "custom_element": "azr-company-finder",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "4d408926ffbe6b3c85073396bd34f64c02919e17cce4e3582bb4fa878cd5930e"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "companies",
+      "type": "Company[] | null",
+      "maxItems": 5000
+    },
+    {
+      "name": "filters",
+      "type": "{category,query}"
+    },
+    {
+      "name": "error",
+      "type": "string | null"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:filters-change",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "filters"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "filters": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "name": "azr:company-selected",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "company"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "company": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "name": "azr:component-error",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "const": "language"
+          }
+        }
+      }
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md"
+}
