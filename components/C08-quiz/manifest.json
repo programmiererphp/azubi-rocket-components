@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C08",
+  "custom_element": "azr-quiz",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "01befe06bbc8f0b562cbf49ee62322608fff092f9fa706a78ae7ed9d07f6ba42"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "quizzes",
+      "type": "Quiz[]|null"
+    },
+    {
+      "name": "quizId",
+      "type": "string"
+    },
+    {
+      "name": "resultState",
+      "type": "QuizState|null"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:quiz-change",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:quiz-result",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md"
+}
