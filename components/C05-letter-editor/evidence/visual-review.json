@@ -1,0 +1,13 @@
+{
+  "reviewed": [
+    "sample-de.pdf page 1",
+    "sample-ru.pdf page 1",
+    "sample-de.docx page 1"
+  ],
+  "renderers": [
+    "Poppler",
+    "LibreOffice"
+  ],
+  "result": "Clean A4, legible Unicode, no clipping/overlap, complete letter and contact block.",
+  "date": "2026-10-21"
+}

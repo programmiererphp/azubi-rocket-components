@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C05",
+  "custom_element": "azr-letter-editor",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "3ea046c96abe318af0651dfb76f113df350eddaa515e8ebf36dc6191e35afdbc"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "letterData",
+      "type": "LetterDataV1"
+    },
+    {
+      "name": "cvData",
+      "type": "CVDataV1|null"
+    },
+    {
+      "name": "company",
+      "type": "Company|null"
+    },
+    {
+      "name": "templates",
+      "type": "LocalizedTemplates|null"
+    },
+    {
+      "name": "services",
+      "type": "DocumentExportPort|null"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:letter-change",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:export-status",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:copy-status",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md",
+  "services": [
+    {
+      "name": "DocumentExporter",
+      "version": "0.1.0",
+      "sha256": "d5b0960fae287b21afc56f370400a20261e8a6f0859a148e960d537caf3234a9"
+    }
+  ]
+}

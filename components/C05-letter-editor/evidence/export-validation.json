@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "documents": [
+    {
+      "language": "de",
+      "pdf_pages": 1,
+      "unicode": true
+    },
+    {
+      "language": "en",
+      "pdf_pages": 1,
+      "unicode": true
+    },
+    {
+      "language": "fr",
+      "pdf_pages": 1,
+      "unicode": true
+    },
+    {
+      "language": "ru",
+      "pdf_pages": 1,
+      "unicode": true
+    }
+  ],
+  "long_pdf_pages": 3,
+  "complete": true
+}
