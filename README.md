@@ -14,3 +14,5 @@ Tested: Chromium at 1440x900, 390x844 and 320x844; de/en/fr/ru, steps 1–6, key
 - [C02 guide · geprüfte Demo](https://programmiererphp.github.io/azubi-rocket-components/components/C02-guide/demo/index.html) — 26 isolierte und 26 Live-Tests bestanden.
 
 - [C03 cv-editor · geprüfte Demo](https://programmiererphp.github.io/azubi-rocket-components/components/C03-cv-editor/demo/index.html) — 33 isolierte und 33 Live-Tests bestanden.
+
+- [C04 company-finder · geprüfte Demo](https://programmiererphp.github.io/azubi-rocket-components/components/C04-company-finder/demo/index.html) — 26 isolierte und 26 Live-Tests bestanden.

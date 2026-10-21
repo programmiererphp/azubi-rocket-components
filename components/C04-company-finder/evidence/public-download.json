@@ -1,0 +1,10 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/005ed694dfb15e4f7380ebb953ad6cbf19e860ac/components/C04-company-finder/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "4d408926ffbe6b3c85073396bd34f64c02919e17cce4e3582bb4fa878cd5930e",
+  "bytes": 20335,
+  "commit_sha": "005ed694dfb15e4f7380ebb953ad6cbf19e860ac",
+  "recorded_at_utc": "2026-10-21T16:28:41.664682+00:00",
+  "method": "urllib GET without Authorization/cookies; published demo separately browser-tested"
+}

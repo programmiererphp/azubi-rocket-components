@@ -56,8 +56,8 @@
       "tag": "azr-company-finder",
       "path": "components/C04-company-finder/manifest.json",
       "version": "0.1.0",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "005ed694dfb15e4f7380ebb953ad6cbf19e860ac",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"
