@@ -1,0 +1,163 @@
+{
+  "component": "C05",
+  "version": "0.1.0",
+  "artifact_sha256": "3ea046c96abe318af0651dfb76f113df350eddaa515e8ebf36dc6191e35afdbc",
+  "passed": true,
+  "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C05-letter-editor/demo/index.html",
+  "recorded_at_utc": "2026-10-21T16:47:59.689Z",
+  "browser": "151.0.7922.34",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 33,
+  "passed_count": 33,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Pinned exporter integrity",
+      "passed": true
+    },
+    {
+      "name": "Template uses actual CV/company with no invented experience",
+      "passed": true
+    },
+    {
+      "name": "Typing preserves focus; host round-trip preserves undo",
+      "passed": true
+    },
+    {
+      "name": "Locale/company changes preserve edited body, inferred email stays empty",
+      "passed": true
+    },
+    {
+      "name": "Mailto safely encodes values and explains long text fallback",
+      "passed": true
+    },
+    {
+      "name": "CMS template validation, escaped substitution and copy isolation",
+      "passed": true
+    },
+    {
+      "name": "Real clipboard copy matches the edited body",
+      "passed": true
+    },
+    {
+      "name": "Host templates apply as plain text with one substitution pass",
+      "passed": true
+    },
+    {
+      "name": "Reconnecting and repeated import do not duplicate listeners",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Mobile preview button opens real letter",
+      "passed": true
+    },
+    {
+      "name": "Missing exporter/busy disable unavailable operations",
+      "passed": true
+    },
+    {
+      "name": "Real de letter PDF/DOCX exports",
+      "passed": true
+    },
+    {
+      "name": "Real en letter PDF/DOCX exports",
+      "passed": true
+    },
+    {
+      "name": "Real fr letter PDF/DOCX exports",
+      "passed": true
+    },
+    {
+      "name": "Real ru letter PDF/DOCX exports",
+      "passed": true
+    },
+    {
+      "name": "Long edited letter is preserved completely in both formats",
+      "passed": true
+    },
+    {
+      "name": "Export failure emits matching lifecycle and permits retry",
+      "passed": true
+    },
+    {
+      "name": "Unsafe body remains text",
+      "passed": true
+    },
+    {
+      "name": "Independent PDF/DOCX parsers verify Unicode and full text",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}
