@@ -1,0 +1,119 @@
+{
+  "component": "C09",
+  "version": "0.1.0",
+  "artifact_sha256": "bfd58b5073e7751c2f2b333c64dd44eeb5c5a0821894106949f2a301a81a9585",
+  "passed": true,
+  "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C09-city-guide/demo/index.html",
+  "recorded_at_utc": "2026-10-21T20:46:54.390Z",
+  "browser": "151.0.7922.34",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 22,
+  "passed_count": 22,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Search is diacritic independent and matches body text",
+      "passed": true
+    },
+    {
+      "name": "Category and query combine, empty state and reset work",
+      "passed": true
+    },
+    {
+      "name": "Categories localized; missing content translation marked German",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Actual source links use safe HTTPS and opener separation",
+      "passed": true
+    },
+    {
+      "name": "Validation is atomic and output/input are isolated copies",
+      "passed": true
+    },
+    {
+      "name": "Busy, loading, errors and no matches recover honestly",
+      "passed": true
+    },
+    {
+      "name": "Injected HTML stays text in title, category and body",
+      "passed": true
+    },
+    {
+      "name": "Mode switch preserves content; repeat import and reconnect emit once",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}
