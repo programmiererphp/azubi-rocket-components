@@ -1,0 +1,24 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/14abab681270e7858adc177afdc0bc84e8f47293/components/C08-quiz/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "01befe06bbc8f0b562cbf49ee62322608fff092f9fa706a78ae7ed9d07f6ba42",
+  "bytes": 17976,
+  "commit_sha": "14abab681270e7858adc177afdc0bc84e8f47293",
+  "recorded_at_utc": "2026-10-21T17:18:34.417566+00:00",
+  "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/14abab681270e7858adc177afdc0bc84e8f47293/components/C08-quiz/dist/index.js",
+      "status": 200,
+      "bytes": 17976,
+      "sha256": "01befe06bbc8f0b562cbf49ee62322608fff092f9fa706a78ae7ed9d07f6ba42"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C08-quiz/dist/index.js",
+      "status": 200,
+      "bytes": 17976,
+      "sha256": "01befe06bbc8f0b562cbf49ee62322608fff092f9fa706a78ae7ed9d07f6ba42"
+    }
+  ]
+}
