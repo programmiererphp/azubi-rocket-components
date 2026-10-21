@@ -7,7 +7,7 @@
   "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "1de919b953bbc54d2d7f9967d17c04729c53df794526d7b05e08400ee7a8e3f5"
+    "sha256": "5246dbfb532a832c2fc58e2d8103b090c5e9ae9b819cb188f12db5b5b1d7ac1b"
   },
   "input_attributes": [
     {

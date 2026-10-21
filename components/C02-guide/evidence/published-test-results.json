@@ -1,0 +1,34 @@
+{
+  "component": "C02",
+  "version": "0.1.0",
+  "passed": false,
+  "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C02-guide/demo/index.html",
+  "recorded_at_utc": "2026-10-21T15:39:12.056Z",
+  "browser": "153.0.8010.0",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 0,
+  "passed_count": 0,
+  "results": [],
+  "console_errors": [],
+  "failed_requests": [
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C02-guide/demo/index.html",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}
