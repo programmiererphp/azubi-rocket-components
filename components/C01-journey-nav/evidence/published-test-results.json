@@ -1,0 +1,374 @@
+{
+  "component": "C01",
+  "version": "0.1.0",
+  "passed": true,
+  "recorded_at_utc": "2026-10-21T15:03:34.059Z",
+  "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C01-journey-nav/demo/index.html",
+  "browser": "Chromium / Playwright",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ],
+  "test_count": 85,
+  "passed_count": 85,
+  "results": [
+    {
+      "name": "Page identity, meaningful content and no error overlay",
+      "passed": true
+    },
+    {
+      "name": "Same deterministic dist bytes as manifest; package budget",
+      "passed": true
+    },
+    {
+      "name": "1440px / de / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / de / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / de / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / de / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / de / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / de / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / en / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / en / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / en / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / en / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / en / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / en / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / fr / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / fr / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / fr / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / fr / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / fr / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / fr / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / ru / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / ru / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / ru / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / ru / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / ru / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px / ru / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / de / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / de / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / de / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / de / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / de / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / de / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / en / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / en / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / en / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / en / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / en / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / en / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / fr / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / fr / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / fr / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / fr / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / fr / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / fr / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / ru / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / ru / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / ru / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / ru / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / ru / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "390px / ru / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / de / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / de / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / de / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / de / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / de / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / de / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / en / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / en / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / en / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / en / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / en / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / en / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / fr / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / fr / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / fr / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / fr / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / fr / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / fr / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / ru / step 1: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / ru / step 2: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / ru / step 3: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / ru / step 4: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / ru / step 5: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "320px / ru / step 6: six visible labels, active state and no overflow",
+      "passed": true
+    },
+    {
+      "name": "Mouse step 5 → 6 updates real host screen; exact versioned event",
+      "passed": true
+    },
+    {
+      "name": "Previous and Next use adjacent steps and boundary buttons disable",
+      "passed": true
+    },
+    {
+      "name": "Keyboard arrows/Home/End, Enter and Space navigate; focus survives host updates",
+      "passed": true
+    },
+    {
+      "name": "All six steps remain visible when unavailable; restricted and busy block navigation",
+      "passed": true
+    },
+    {
+      "name": "Current step emits nothing; state is controlled until host accepts",
+      "passed": true
+    },
+    {
+      "name": "Invalid input properties are rejected atomically, with defensive copies",
+      "passed": true
+    },
+    {
+      "name": "Attributes update valid state, invalid values retain prior state and emit errors",
+      "passed": true
+    },
+    {
+      "name": "Repeated mount/unmount has one listener; instances have independent state",
+      "passed": true
+    },
+    {
+      "name": "Duplicate module import does not redefine custom element; pre-upgrade property retained",
+      "passed": true
+    },
+    {
+      "name": "Demo copy log and reset controls work",
+      "passed": true
+    },
+    {
+      "name": "No external service requests, failed requests or relevant browser errors",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "limitations": [
+    "Standalone C01 only; full application shell not implemented",
+    "Chromium only; Firefox and Safari untested"
+  ]
+}
