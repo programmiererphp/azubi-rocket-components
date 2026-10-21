@@ -24,3 +24,6 @@ C01 ist eigenständig implementiert und GITHUB_VERIFIED. 85/85 isolierte und zus
 
 ## D2 vor Implementierung
 Detaillierter Umfang und versionierter Vertrag: deliveries/D2-C02.md. Standortwahl und kontrollierte Checklisten als C02; C01 bleibt unabhängig und unverändert. Vollständige weitere Umsetzung vom Nutzer beauftragt.
+
+## D3 vor Implementierung
+C03 samt gemeinsamem, separat gehashtem DocumentExporter folgt deliveries/D3-C03.md. Echte Unicode-PDF-/DOCX-Exporte, keine Warnfußzeilen und keine externen Datenaufrufe.
