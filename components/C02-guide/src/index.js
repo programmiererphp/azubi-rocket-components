@@ -1,0 +1,34 @@
+import{ElementBase,esc,copy,emit,localeText,languages}from'./ui.js';import{words}from'./locales.js';
+const stages=['orientation','preparation','start'],locations=[null,'deutschland','ausland'];
+function journey(value){if(!value||value.schemaVersion!==1||!locations.includes(value.location)||typeof value.finished!=='boolean'||!Array.isArray(value.checkedItems)||value.checkedItems.length>1000||!value.checkedItems.every(x=>typeof x==='string'&&/^[a-z0-9-]{1,80}$/.test(x))||new Set(value.checkedItems).size!==value.checkedItems.length)throw new TypeError('Invalid guide journey');return copy(value);}
+function content(value){if(value===null)return null;if(!value||value.schemaVersion!==1||!Array.isArray(value.items)||value.items.length>200)throw new TypeError('Invalid content');const ids=new Set();for(const item of value.items){if(!item||typeof item.id!=='string'||!/^[a-z0-9-]{1,80}$/.test(item.id)||ids.has(item.id)||!stages.includes(item.stage)||!['all','deutschland','ausland'].includes(item.location))throw new TypeError('Invalid guide item');ids.add(item.id);for(const field of ['title','body'])if(!item[field]||!languages.every(lang=>typeof item[field][lang]==='string'))throw new TypeError('Guide translations required');}return copy(value);}
+export class AzrGuide extends ElementBase{
+ #journey={schemaVersion:1,location:null,checkedItems:[],finished:false};#content=null;#stage='orientation';#available=[1,2,3,4,5,6];#error=null;
+ upgradeProperties=['journey','content','availableSteps','language','busy','error'];
+ static get observedAttributes(){return [...super.observedAttributes,'stage'];}
+ get journey(){return copy(this.#journey);}set journey(v){this.#journey=journey(v);this.render();}
+ get content(){return copy(this.#content);}set content(v){this.#content=content(v);this.render();}
+ get availableSteps(){return [...this.#available];}set availableSteps(v){if(!Array.isArray(v)||!v.every(n=>Number.isInteger(n)&&n>=1&&n<=6)||new Set(v).size!==v.length)throw new TypeError('Invalid steps');this.#available=[...v];this.render();}
+ get stage(){return this.#stage;}set stage(v){if(!stages.includes(v))throw new TypeError('Invalid stage');this.setAttribute('stage',v);}
+ get error(){return this.#error;}set error(v){if(v!==null&&typeof v!=='string')throw new TypeError('error must be string or null');this.#error=v;this.render();}
+ attributeChangedCallback(n,o,v){if(n==='stage'){if(!stages.includes(v??'orientation')){emit(this,'azr:guide-error',{code:'invalid-attribute',attribute:n});return;}this.#stage=v??'orientation';this.render();}else if(n==='language'&&!languages.includes(v??'de'))emit(this,'azr:guide-error',{code:'invalid-attribute',attribute:n});else super.attributeChangedCallback(n,o,v);}
+ #visible(){return this.#content?.items.filter(x=>x.stage===this.#stage&&(x.location==='all'||x.location===this.#journey.location))??[];}
+ #change(next,reason){emit(this,'azr:guide-change',{journey:next,reason});this.render();}
+ handle(e){if(this.busy)return;const target=e.target.closest('button,input');if(!target)return;
+  if(e.type==='click'&&target.dataset.location){this.#change({...this.journey,location:target.dataset.location,finished:false},'location');}
+  if(e.type==='change'&&target.dataset.check){const checked=new Set(this.#journey.checkedItems);target.checked?checked.add(target.dataset.check):checked.delete(target.dataset.check);this.#change({...this.journey,checkedItems:[...checked],finished:false},'check');}
+  if(e.type==='click'&&target.dataset.route){const n=Number(target.dataset.route);if(!target.disabled&&this.#available.includes(n))emit(this,'azr:route-request',{toStep:n});}
+  if(e.type==='click'&&target.dataset.finish!==undefined){const items=this.#visible();if(this.#stage==='start'&&items.length&&this.#journey.location&&items.every(x=>this.#journey.checkedItems.includes(x.id)))this.#change({...this.journey,finished:true},'finish');}
+ }
+ render(){const t=words[this.language],items=this.#visible(),checked=items.filter(x=>this.#journey.checkedItems.includes(x.id)).length;const disabled=this.busy?'disabled':'';
+  if(this.#error){this.paint(`<div role="alert" class="notice error">${t.error}<p class="body">${esc(this.#error)}</p></div>`);return;}
+  if(this.#content===null){this.paint(`<p role="status" class="notice">${t.loading}</p>`);return;}
+  let body=`<h1>${t[this.#stage]}</h1><p>${this.#stage==='orientation'?t.intro:t[this.#stage+'Intro']}</p>`;
+  if(this.#stage==='orientation')body+=`<div class="grid">${[['deutschland','germany','🇩🇪'],['ausland','abroad','🌍']].map(([value,key,icon])=>`<button type="button" class="card ${this.#journey.location===value?'selected':''}" style="display:block;text-align:left" data-key="${value}" data-location="${value}" aria-pressed="${this.#journey.location===value}" ${disabled}><span style="font-size:30px" aria-hidden="true">${icon}</span><h2>${t[key]}</h2><p>${t[key+'Hint']}</p></button>`).join('')}</div><p class="muted" role="status">${this.#journey.location?t.location+': '+t[this.#journey.location==='deutschland'?'germany':'abroad']:t.choose}</p><div class="actions"><button type="button" class="primary" data-key="begin" data-route="2" ${this.busy||!this.#journey.location||!this.#available.includes(2)?'disabled':''}>${t.begin} →</button></div>`;
+  if(this.#stage!=='orientation')body+=!items.length?`<p class="notice" role="status">${t.empty}</p>`:`<p class="muted" role="status">${checked} / ${items.length} ${t.done}</p><progress aria-label="${t.done}" max="${items.length}" value="${checked}"></progress><ul class="list stack">${items.map(item=>`<li class="card"><label class="check"><input type="checkbox" data-key="${item.id}" data-check="${item.id}" ${this.#journey.checkedItems.includes(item.id)?'checked':''} ${disabled}><span><strong>${esc(localeText(item.title,this.language))}</strong></span></label><details><summary>${t.details}</summary><div class="body">${esc(localeText(item.body,this.language))}</div></details></li>`).join('')}</ul>`;
+  if(this.#stage==='preparation')body+=`<div class="actions">${[[3,'cv'],[4,'companies'],[5,'letter']].map(([n,key])=>`<button type="button" class="${n===3?'primary':''}" data-key="route-${n}" data-route="${n}" ${this.busy||!this.#available.includes(n)?'disabled':''}>${t[key]} →</button>`).join('')}</div>`;
+  if(this.#stage==='start'&&items.length)body+=this.#journey.finished&&checked===items.length&&this.#journey.location?`<p class="notice success" role="status">${t.finished}</p>`:`<div class="actions"><button type="button" class="primary" data-key="finish" data-finish ${this.busy||!this.#journey.location||checked!==items.length?'disabled':''}>${t.finish}</button></div>`;
+  this.paint(`<section lang="${this.language}" aria-busy="${this.busy}">${this.busy?`<p class="notice" role="status">${t.busy}</p>`:''}${body}</section>`);
+ }
+}
+if(!customElements.get('azr-guide'))customElements.define('azr-guide',AzrGuide);

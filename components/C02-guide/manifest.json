@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C02",
+  "custom_element": "azr-guide",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "1de919b953bbc54d2d7f9967d17c04729c53df794526d7b05e08400ee7a8e3f5"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    },
+    {
+      "name": "stage",
+      "enum": [
+        "orientation",
+        "preparation",
+        "start"
+      ]
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "journey"
+    },
+    {
+      "name": "content"
+    },
+    {
+      "name": "availableSteps"
+    },
+    {
+      "name": "error"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:guide-change",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "journey",
+          "reason"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "journey": {
+            "type": "object"
+          },
+          "reason": {
+            "enum": [
+              "location",
+              "check",
+              "finish"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "azr:route-request",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "toStep"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "toStep": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "azr:guide-error",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "enum": [
+              "stage",
+              "language"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md",
+  "demo_dependencies": [
+    {
+      "id": "C01",
+      "version": "0.1.0",
+      "commit": "794cf464598513ac6530e0c8d4f705fa46840e13",
+      "sha256": "a54fdf23ee3ad772567c35da5a6478c3bb4063fbe75bc19bce6dddb574120d1c",
+      "path": "demo/vendor/journey-nav.js"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: Publish verified component releases
+on:
+  push:
+    branches: [main]
+    paths: ['COMPONENT_REGISTER.json', '.github/workflows/component-releases.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: verified-component-releases
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Release only components with passed isolated and published evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module - <<'JS' > /tmp/verified-components.tsv
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const register=JSON.parse(fs.readFileSync('COMPONENT_REGISTER.json'));
+          for(const c of register.components){
+            if(c.status!=='GITHUB_VERIFIED')continue;
+            const folder=c.path.replace(/\/manifest.json$/,'');
+            const m=JSON.parse(fs.readFileSync(c.path));
+            const dist=fs.readFileSync(folder+'/dist/index.js');
+            if(crypto.createHash('sha256').update(dist).digest('hex')!==m.entrypoints.sha256)throw Error(c.id+' hash mismatch');
+            for(const file of ['test-results.json','published-test-results.json'])if(JSON.parse(fs.readFileSync(folder+'/evidence/'+file)).passed!==true)throw Error(c.id+' evidence failed');
+            if(m.public_anonymous_fetch_verified!==true)throw Error(c.id+' missing public proof');
+            console.log([c.id,c.version,folder,c.git_commit_sha].join('\t'));
+          }
+          JS
+          while IFS=$'\t' read -r component_id component_version component_folder component_commit; do
+            component_tag="${component_id}-v${component_version}"
+            if gh release view "$component_tag" >/dev/null 2>&1; then continue; fi
+            mkdir -p /tmp/component-packages
+            python3 - "$component_folder" "/tmp/component-packages/${component_tag}.zip" <<'PY'
+          from pathlib import Path
+          import zipfile,sys
+          root=Path(sys.argv[1])
+          with zipfile.ZipFile(sys.argv[2],'w',zipfile.ZIP_DEFLATED) as archive:
+            for path in sorted(root.rglob('*')):
+              if path.is_file() and not any(x in path.parts for x in ['node_modules','.git']): archive.write(path,path.relative_to(root.parent))
+          PY
+            gh release create "$component_tag" "/tmp/component-packages/${component_tag}.zip" --target "$component_commit" --title "$component_id v$component_version" --notes-file "$component_folder/README.md"
+          done < /tmp/verified-components.tsv
