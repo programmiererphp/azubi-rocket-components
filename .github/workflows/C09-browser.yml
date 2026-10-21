@@ -1,0 +1,70 @@
+name: C09 isolated and published browser tests
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'components/C09-city-guide/src/**'
+      - 'components/C09-city-guide/dist/**'
+      - 'components/C09-city-guide/demo/**'
+      - 'components/C09-city-guide/tests/**'
+      - 'components/C09-city-guide/fixtures/**'
+      - 'components/C09-city-guide/build.mjs'
+      - 'components/C09-city-guide/package.json'
+      - '.github/workflows/C09-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned dependencies
+        working-directory: components/C09-city-guide
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Install Chromium
+        working-directory: components/C09-city-guide
+        run: npx playwright install --with-deps chromium --only-shell
+      - name: Deterministic build
+        working-directory: components/C09-city-guide
+        run: |
+          npm run build
+          git diff --exit-code -- dist/index.js manifest.json
+      - name: Isolated desktop/mobile tests
+        working-directory: components/C09-city-guide
+        run: npm test
+      - name: Wait for exact public Pages artifact
+        working-directory: components/C09-city-guide
+        run: |
+          expected_hash=$(node -p "JSON.parse(require('fs').readFileSync('manifest.json')).entrypoints.sha256")
+          for attempt in $(seq 1 24); do
+            if curl -fsSL 'https://programmiererphp.github.io/azubi-rocket-components/components/C09-city-guide/dist/index.js' -o /tmp/component-public.js; then
+              actual_hash=$(sha256sum /tmp/component-public.js | cut -d' ' -f1)
+              if [ "$actual_hash" = "$expected_hash" ]; then exit 0; fi
+            fi
+            sleep 5
+          done
+          exit 1
+      - name: Published desktop/mobile tests
+        working-directory: components/C09-city-guide
+        env:
+          REMOTE_BASE_URL: https://programmiererphp.github.io/azubi-rocket-components/components/C09-city-guide/
+        run: npm test
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: C09-browser-evidence
+          path: components/C09-city-guide/evidence/
+      - name: Commit passing evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add components/C09-city-guide/evidence/
+          git diff --cached --quiet || git commit -m 'Record C09 actual isolated and public browser evidence [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main

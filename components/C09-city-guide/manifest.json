@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C09",
+  "custom_element": "azr-city-guide",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "bfd58b5073e7751c2f2b333c64dd44eeb5c5a0821894106949f2a301a81a9585"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    },
+    {
+      "name": "mode",
+      "enum": [
+        "city",
+        "professions",
+        "about"
+      ]
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "content",
+      "type": "ResourceContent|null"
+    },
+    {
+      "name": "filters",
+      "type": "ResourceFilters"
+    },
+    {
+      "name": "error",
+      "type": "string"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:resource-filter-change",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md"
+}

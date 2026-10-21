@@ -126,7 +126,7 @@
       "tag": "azr-city-guide",
       "path": "components/C09-city-guide/manifest.json",
       "version": "0.1.0",
-      "status": "PLANNED",
+      "status": "ISOLATED_TESTED",
       "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
