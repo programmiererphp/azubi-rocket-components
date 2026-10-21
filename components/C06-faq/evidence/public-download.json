@@ -1,10 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/76d31d0f26df76899999e761e88870793ce020e5/components/C06-faq/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/2acd394cea793abe780f98a002ab038e86db08c3/components/C06-faq/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "sha256": "76c88a6e385d863d467d239166a9a29c45d545102c521eff9ffe04517e949075",
-  "bytes": 15619,
-  "commit_sha": "76d31d0f26df76899999e761e88870793ce020e5",
-  "recorded_at_utc": "2026-10-21T16:55:17.784576+00:00",
-  "method": "urllib GET without Authorization/cookies; published demo separately browser-tested"
+  "sha256": "bc8d86ee775fb177d09956d1b0251b2a311e19fc751b14a61bec557f60f1f442",
+  "bytes": 15774,
+  "commit_sha": "2acd394cea793abe780f98a002ab038e86db08c3",
+  "recorded_at_utc": "2026-10-21T17:12:04.655226+00:00",
+  "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/2acd394cea793abe780f98a002ab038e86db08c3/components/C06-faq/dist/index.js",
+      "status": 200,
+      "bytes": 15774,
+      "sha256": "bc8d86ee775fb177d09956d1b0251b2a311e19fc751b14a61bec557f60f1f442"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C06-faq/dist/index.js",
+      "status": 200,
+      "bytes": 15774,
+      "sha256": "bc8d86ee775fb177d09956d1b0251b2a311e19fc751b14a61bec557f60f1f442"
+    }
+  ]
 }
