@@ -1,0 +1,9 @@
+# Integrationsverträge v1
+
+`JourneyState`: `{schemaVersion:1,currentStep:1..6,completedSteps:number[],availableSteps:number[],location:'deutschland'|'ausland'|null,checkedItems:string[],finished:boolean}`. Locale getrennt: de/en/fr/ru. Jeder Schritt hat eine stabile ID: orientation, preparation, cv, companies, letter, start. Anzeige und Reihenfolge sind unveränderliche C01-Konstanten; Übersetzungen ändern nur Texte.
+
+C01 erhält `state` mit currentStep/completedSteps/availableSteps, Attribute current-step/language/busy. Es schreibt keinen Speicher und verändert den kontrollierten Schritt nicht selbst. `azr:navigate`: `{schemaVersion:1,fromStep,toStep,via}` mit via=step|keyboard|previous|next; bubbles=true, composed=true. Unverfügbare/aktuelle Schritte und busy lösen keine Navigation aus. Host entscheidet, speichert, setzt state neu. Ungültige Property-Objekte werden abgelehnt; ungültige Attribute behalten den letzten gültigen Zustand und melden `azr:navigation-error`.
+
+Alle weiteren Events: JSON-serialisierbar, schemaVersion=1, bubbles+composed. Verträge werden vor ihrer Implementierung durch genaue JSON-Schemas im jeweiligen Manifest erweitert. CV/Letter teilen nur versionierte Daten, keine Komponentenreferenzen. Pro Export: pending/success/error mit Bezug auf actionId; keine Warnhinweise in fertigen Dokumenten. Clipboard/Downloads/Mailto werden im Host/Adapter geprüft; mailto hängt keine Dateien automatisch an.
+
+ContentRepository: versionierte Inhaltsobjekte, keine Bewerberdaten. DraftStore: load/save/export/import mit schemaVersion+finished und Migration. CompanyRepository: read/filter, tatsächliche Bestandskontakte ohne behauptete Verifizierung. DocumentExporter: PDF/DOCX aus einem Modell, Unicode und Layout getestet. AiGateway: spätere explizite Anbieter-/Modell-/Budgetkonfiguration; keine Aufrufe in C01. AdminRepository erfordert echte Autorisierung; nicht durch einen sichtbaren Passwortdialog allein gesichert.

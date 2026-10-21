@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "project": "azubi-rocket",
+  "planned_at_utc": "2026-10-21T11:17:43.535986+00:00",
+  "github": {
+    "repo": "programmiererphp/azubi-rocket-components",
+    "visibility": "public",
+    "plan_commit_sha": null
+  },
+  "components": [
+    {
+      "id": "C01",
+      "name": "journey-nav",
+      "tag": "azr-journey-nav",
+      "path": "components/C01-journey-nav/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C02",
+      "name": "guide",
+      "tag": "azr-guide",
+      "path": "components/C02-guide/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C03",
+      "name": "cv-editor",
+      "tag": "azr-cv-editor",
+      "path": "components/C03-cv-editor/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C04",
+      "name": "company-finder",
+      "tag": "azr-company-finder",
+      "path": "components/C04-company-finder/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C05",
+      "name": "letter-editor",
+      "tag": "azr-letter-editor",
+      "path": "components/C05-letter-editor/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C06",
+      "name": "faq",
+      "tag": "azr-faq",
+      "path": "components/C06-faq/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C07",
+      "name": "document-check",
+      "tag": "azr-document-check",
+      "path": "components/C07-document-check/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C08",
+      "name": "quiz",
+      "tag": "azr-quiz",
+      "path": "components/C08-quiz/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C09",
+      "name": "city-guide",
+      "tag": "azr-city-guide",
+      "path": "components/C09-city-guide/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C10",
+      "name": "question-form",
+      "tag": "azr-question-form",
+      "path": "components/C10-question-form/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "C11",
+      "name": "content-admin",
+      "tag": "azr-content-admin",
+      "path": "components/C11-content-admin/manifest.json",
+      "version": "0.1.0",
+      "status": "PLANNED",
+      "git_commit_sha": null,
+      "evidence_refs": [
+        "AZR-MASTER-FLOW-03",
+        "AZR-DETAIL-01..05"
+      ],
+      "dependencies": []
+    }
+  ],
+  "shell": {
+    "path": "app-shell",
+    "repository": "PENDING",
+    "status": "NOT_STARTED",
+    "integration_after": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06"
+    ]
+  }
+}

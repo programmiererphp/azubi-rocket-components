@@ -1,0 +1,12 @@
+component_id,source_route,feature,decision,reference
+C01,all user routes,Einheitliche Navigation,KEEP/REPLACE implementation,approved master/detail UX
+C02,/; /guide-steps; /instruction,"Orientierung, Vorbereitung und Start-Checklisten",KEEP/REPLACE implementation,approved master/detail UX
+C03,/cv,"CV-Eingabe, Vorschau und PDF/DOCX",KEEP/REPLACE implementation,approved master/detail UX
+C04,/jobs,"Berufs-/Ortssuche, Kontakt-Auswahl",KEEP/REPLACE implementation,approved master/detail UX
+C05,/letter; /settings,Anschreiben und E-Mail-Entwurf,KEEP/REPLACE implementation,approved master/detail UX
+C06,/faq; /questions,"Suche, Kategorien und Hilfe-Drawer",KEEP/REPLACE implementation,approved master/detail UX
+C07,/documents,Realer Dokumentencheck statt Simulation,KEEP/REPLACE implementation,approved master/detail UX
+C08,/quiz; /professions,Versionierte Deutschland-/Readiness-Fragen,KEEP/REPLACE implementation,approved master/detail UX
+C09,/city-guide; /guide alias,Ortsinformationen mit erlaubten Medien,KEEP/REPLACE implementation,approved master/detail UX
+C10,/questions; /about; /add-company,Kontaktformular und Beratungslinks,KEEP/REPLACE implementation,approved master/detail UX
+C11,new protected admin route,Mini-CMS mit XML-Schema und Import/Export,KEEP/REPLACE implementation,approved master/detail UX

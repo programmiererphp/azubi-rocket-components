@@ -1,0 +1,27 @@
+# Azubi Rocket — Komponentenarchitektur v1
+
+Referenz: AZR-ARCHITECTURE-01. Freigegebene Richtung: AZR-MASTER-FLOW-01 mit Nutzerkorrektur; präzisierte visuelle Referenz AZR-MASTER-FLOW-03. Der Nutzer hat die Gesamtidee bestätigt und selbstständige Fortsetzung verlangt. Detailbilder dienen als Layoutvorlagen, dieser Vertrag bestimmt Verhalten und Umfang.
+
+Alle Featuremodule sind autonome native Custom Elements, ESM und Shadow DOM. Jedes Modul erhält src, deterministisches dist, versionierte manifest.json, eigenständige HTML-Demo, Fixtures, Tests und echte Desktop-/Mobilnachweise. Die Hauptanwendung importiert geprüfte, an Commit+SHA256 gebundene Builds; AI Studio erzeugt nur Shell/Adapter und darf die Komponenten nicht nachbauen.
+
+## Verbindliche Navigation
+Auf jeder Nutzeransicht erscheinen immer genau dieselben sechs Schritte: 1 Orientierung, 2 Vorbereitung, 3 Lebenslauf, 4 Firmen, 5 Anschreiben, 6 Start. Insbesondere 5/6 dürfen keinen verkürzten oder abweichenden Navigator erhalten. C01 ist dafür die einzige Implementierung und Datenquelle. Desktop: sechs Spalten. Schmal/mobile: zwei Zeilen mit je drei beschrifteten Schritten; alle sechs bleiben gleichzeitig sichtbar. Aktueller Schritt über aria-current=step, abgeschlossene Schritte unterscheidbar; nicht verfügbare Schritte bleiben sichtbar und sind deaktiviert. Zurückspringen löscht keine Eingaben. Der separate Adminbereich ist kein Bewerbungs-Wizard und verwendet eigene Adminnavigation.
+
+## Komponenten
+- **C01 `<azr-journey-nav>`**: Einheitliche Navigation. Eingaben: state/current-step/language/busy. Ereignisse: azr:navigate. Dienste: Keine Dienste. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C02 `<azr-guide>`**: Orientierung, Vorbereitung und Start-Checklisten. Eingaben: content/journey/location/language. Ereignisse: azr:guide-change; azr:route-request. Dienste: ContentRepository (host injected). Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C03 `<azr-cv-editor>`**: CV-Eingabe, Vorschau und PDF/DOCX. Eingaben: cvData/language/services. Ereignisse: azr:cv-change; azr:export-status. Dienste: DocumentExporter, draft persistence owned by shell. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C04 `<azr-company-finder>`**: Berufs-/Ortssuche, Kontakt-Auswahl. Eingaben: companies/filters/language. Ereignisse: azr:company-selected; azr:filters-change. Dienste: CompanyRepository; no writes. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C05 `<azr-letter-editor>`**: Anschreiben und E-Mail-Entwurf. Eingaben: cvData/company/templates/language/services. Ereignisse: azr:letter-change; azr:export-status. Dienste: DocumentExporter, ClipboardAdapter; no automatic send. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C06 `<azr-faq>`**: Suche, Kategorien und Hilfe-Drawer. Eingaben: items/query/open/language. Ereignisse: azr:help-close; azr:faq-query. Dienste: ContentRepository; no AI in first release. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C07 `<azr-document-check>`**: Realer Dokumentencheck statt Simulation. Eingaben: files/language/services. Ereignisse: azr:files-change; azr:check-status. Dienste: LocalDocumentProcessor with explicit supported operations. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C08 `<azr-quiz>`**: Versionierte Deutschland-/Readiness-Fragen. Eingaben: questionSet/answers/language. Ereignisse: azr:quiz-change; azr:quiz-finished. Dienste: No network; shell stores answers. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C09 `<azr-city-guide>`**: Ortsinformationen mit erlaubten Medien. Eingaben: content/language. Ereignisse: azr:external-link. Dienste: ContentRepository. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C10 `<azr-question-form>`**: Kontaktformular und Beratungslinks. Eingaben: schema/values/language/services. Ereignisse: azr:form-status. Dienste: FormGateway; confirmation before actual external submission. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+- **C11 `<azr-content-admin>`**: Mini-CMS mit XML-Schema und Import/Export. Eingaben: content/layout/design/schema/language/services. Ereignisse: azr:content-change; azr:import-review. Dienste: Authorized ContentRepository; no applicant records. Eigenständige Tests ohne Shell; keine direkten Importe anderer Featurekomponenten.
+
+## Zustands- und Dienstgrenzen
+Die Shell besitzt Zustand/Persistenz und verknüpft Ereignisse mit neuen Properties. Komponenten kennen weder Shellcode noch fremde Komponenten. Kein API-Schlüssel im Browser. Erst die spätere getrennte Backend-Schicht übernimmt echte Accounts, sichere Speicherung und KI-Gateway. Keine unechte Passwortanmeldung in localStorage. Exporte/Importe müssen Versionen und finished-Flags erhalten. Bewerberdaten und Admininhalte sind getrennt.
+
+## Prüfgates
+PLANNED -> DEVELOPING -> ISOLATED_TESTED -> GITHUB_VERIFIED -> INTEGRATED -> STAGING_VERIFIED -> ACCEPTED. Keine Shellintegration ohne tatsächliche Testnachweise und anonym abrufbares öffentliches dist. Noch nicht implementierte Teile erhalten keinen Erfolgsstatus. Produktionswechsel ist ein separater Schritt mit Rollback.
