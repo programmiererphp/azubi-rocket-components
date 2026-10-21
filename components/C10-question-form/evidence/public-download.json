@@ -1,0 +1,24 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/b5dbacc6982648035895ed68ba03b4133dae91fe/components/C10-question-form/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0",
+  "bytes": 19183,
+  "commit_sha": "b5dbacc6982648035895ed68ba03b4133dae91fe",
+  "recorded_at_utc": "2026-10-21T20:53:39.734639+00:00",
+  "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/b5dbacc6982648035895ed68ba03b4133dae91fe/components/C10-question-form/dist/index.js",
+      "status": 200,
+      "bytes": 19183,
+      "sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C10-question-form/dist/index.js",
+      "status": 200,
+      "bytes": 19183,
+      "sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0"
+    }
+  ]
+}
