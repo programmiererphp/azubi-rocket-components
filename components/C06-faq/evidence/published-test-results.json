@@ -1,10 +1,10 @@
 {
   "component": "C06",
-  "version": "0.1.0",
-  "artifact_sha256": "76c88a6e385d863d467d239166a9a29c45d545102c521eff9ffe04517e949075",
+  "version": "0.1.1",
+  "artifact_sha256": "bc8d86ee775fb177d09956d1b0251b2a311e19fc751b14a61bec557f60f1f442",
   "passed": true,
   "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C06-faq/demo/index.html",
-  "recorded_at_utc": "2026-10-21T16:54:19.812Z",
+  "recorded_at_utc": "2026-10-21T17:09:03.135Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
