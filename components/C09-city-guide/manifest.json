@@ -51,13 +51,64 @@
       "name": "azr:resource-filter-change",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "filters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "category": {
+                "type": "string",
+                "maxLength": 100
+              }
+            },
+            "required": [
+              "query",
+              "category"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "filters"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:component-error",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "const": "language"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "additionalProperties": false
+      }
     }
   ],
   "dependencies": [],
@@ -71,5 +122,6 @@
     "ai_calls": 0,
     "network_calls": 0
   },
-  "rights": "RIGHTS.md"
+  "rights": "RIGHTS.md",
+  "contract_document": "../../deliveries/D9-C09.md"
 }

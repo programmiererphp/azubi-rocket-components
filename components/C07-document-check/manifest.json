@@ -35,19 +35,199 @@
       "name": "azr:document-status",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "actionId": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "filename": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "operation": {
+            "enum": [
+              "inspect",
+              "optimize-image"
+            ]
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "success",
+              "error"
+            ]
+          },
+          "result": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "pdf",
+                  "image"
+                ]
+              },
+              "size": {
+                "type": "number",
+                "minimum": 0
+              },
+              "pages": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "width": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "outputSize": {
+                "type": "number",
+                "minimum": 0
+              },
+              "outputWidth": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "outputHeight": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "kind",
+              "size"
+            ],
+            "additionalProperties": false
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 30000
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "actionId",
+          "filename",
+          "operation",
+          "status"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:documents-change",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 1000
+                },
+                "size": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "type": {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                "kind": {
+                  "enum": [
+                    "pdf",
+                    "image"
+                  ]
+                },
+                "pages": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "outputSize": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "outputWidth": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "outputHeight": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "size",
+                "type"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 10
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "documents"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:component-error",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "const": "language"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "additionalProperties": false
+      }
     }
   ],
   "dependencies": [],
@@ -73,5 +253,6 @@
       },
       "network_calls": 0
     }
-  ]
+  ],
+  "contract_document": "../../deliveries/D7-C07.md"
 }

@@ -51,25 +51,160 @@
       "name": "azr:letter-change",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "letterData": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "const": 1
+              },
+              "profession": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "startingDate": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "senderName": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "recipientName": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "recipientEmail": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "subject": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "body": {
+                "type": "string",
+                "maxLength": 30000
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "profession",
+              "startingDate",
+              "senderName",
+              "recipientName",
+              "recipientEmail",
+              "subject",
+              "body"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "letterData"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:export-status",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "actionId": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "format": {
+            "enum": [
+              "pdf",
+              "docx"
+            ]
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "success",
+              "error"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 30000
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "actionId",
+          "format",
+          "status"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:copy-status",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ]
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "status"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:component-error",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "const": "language"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "additionalProperties": false
+      }
     }
   ],
   "dependencies": [],
@@ -90,5 +225,6 @@
       "version": "0.1.0",
       "sha256": "d5b0960fae287b21afc56f370400a20261e8a6f0859a148e960d537caf3234a9"
     }
-  ]
+  ],
+  "contract_document": "../../deliveries/D5-C05.md"
 }

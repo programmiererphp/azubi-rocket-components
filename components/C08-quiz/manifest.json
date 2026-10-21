@@ -43,19 +43,112 @@
       "name": "azr:quiz-change",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "state": {
+            "type": "object",
+            "properties": {
+              "quizId": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "questionIndex": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "answers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                "maxProperties": 200
+              }
+            },
+            "required": [
+              "quizId",
+              "questionIndex",
+              "answers"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "state"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:quiz-result",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "quizId": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0
+          },
+          "maxScore": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "ratio": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "quizId",
+          "score",
+          "maxScore",
+          "ratio"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "azr:component-error",
       "schema_version": 1,
       "bubbles": true,
-      "composed": true
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "const": "language"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "additionalProperties": false
+      }
     }
   ],
   "dependencies": [],
@@ -69,5 +162,6 @@
     "ai_calls": 0,
     "network_calls": 0
   },
-  "rights": "RIGHTS.md"
+  "rights": "RIGHTS.md",
+  "contract_document": "../../deliveries/D8-C08.md"
 }
