@@ -14,7 +14,7 @@
       "tag": "azr-journey-nav",
       "path": "components/C01-journey-nav/manifest.json",
       "version": "0.1.0",
-      "status": "DEVELOPING",
+      "status": "ISOLATED_TESTED",
       "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
