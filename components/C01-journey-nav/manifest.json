@@ -4,7 +4,7 @@
   "custom_element": "azr-journey-nav",
   "version": "0.1.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "a54fdf23ee3ad772567c35da5a6478c3bb4063fbe75bc19bce6dddb574120d1c"
@@ -186,5 +186,6 @@
     "esm_max_bytes": 24000
   },
   "visual_reference": "AZR-MASTER-FLOW-03",
-  "license": "See root RIGHTS.md"
+  "license": "See root RIGHTS.md",
+  "git_commit_sha": "2711a326df4e089d789b7b864c4c28e33181b46e"
 }

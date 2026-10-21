@@ -83,7 +83,9 @@ try {
     }
   }
   await page.setViewportSize({width:1440,height:900});
-  await page.selectOption('#language','de'); await state(5,[1,2,3,4]);
+  await page.click('#reset');
+  await page.locator('azr-journey-nav [data-step="5"]').click();
+  await state(5,[1,2,3,4]);
   await page.screenshot({path:resolve(evidence,'desktop.png'),fullPage:false});
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:resolve(evidence,'mobile.png'),fullPage:false});

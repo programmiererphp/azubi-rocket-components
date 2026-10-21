@@ -18,3 +18,6 @@ Mini-CMS/Admin, echte Accounts/DB-Migration, KI, Bildbearbeitung, automatische �
 
 ## Deutschland/Datenschutz
 Vor öffentlicher Endnutzer-Veröffentlichung Impressum, Datenschutzerklärung, konkrete Datenspeicherung und Verantwortliche in der Shell ergänzen; keine erfundenen Betreiberangaben. Bewerberdaten nicht in öffentliche Demos/Logs. Private Recovery bleibt getrennt von öffentlichen Komponenten. Aktuelle Rechtsangaben werden später quellenbasiert überprüft.
+
+## Stand D1
+C01 ist eigenständig implementiert und GITHUB_VERIFIED. 85/85 isolierte und zusätzlich 85/85 Tests gegen die öffentliche Demo bestanden. Sechs Schritte bleiben auch bei 5/6 und auf Mobile sichtbar. Kein Produktionswechsel; C02–C11 und die App-Shell folgen getrennt. Details: components/C01-journey-nav/DELIVERY.md.
