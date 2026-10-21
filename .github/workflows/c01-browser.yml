@@ -1,0 +1,47 @@
+name: C01 isolated browser tests
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'components/C01-journey-nav/**'
+      - '!components/C01-journey-nav/evidence/**'
+      - '.github/workflows/c01-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned test dependency
+        working-directory: components/C01-journey-nav
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Install Chromium
+        working-directory: components/C01-journey-nav
+        run: npx playwright install --with-deps chromium --only-shell
+      - name: Verify deterministic build
+        working-directory: components/C01-journey-nav
+        run: |
+          npm run build
+          git diff --exit-code -- dist/index.js manifest.json
+      - name: Browser tests on desktop and mobile
+        working-directory: components/C01-journey-nav
+        run: npm test
+      - name: Upload actual test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: C01-browser-evidence
+          path: components/C01-journey-nav/evidence/
+      - name: Commit passing evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add components/C01-journey-nav/evidence/
+          git diff --cached --quiet || git commit -m 'Record actual C01 desktop/mobile browser evidence [skip ci]'
+          git push origin HEAD:main

@@ -5,7 +5,7 @@
   "github": {
     "repo": "programmiererphp/azubi-rocket-components",
     "visibility": "public",
-    "plan_commit_sha": null
+    "plan_commit_sha": "27578a5a4158b9805ca4ec3b8a597fd4463fcec8"
   },
   "components": [
     {
@@ -14,7 +14,7 @@
       "tag": "azr-journey-nav",
       "path": "components/C01-journey-nav/manifest.json",
       "version": "0.1.0",
-      "status": "PLANNED",
+      "status": "DEVELOPING",
       "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
