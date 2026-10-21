@@ -84,8 +84,8 @@
       "tag": "azr-faq",
       "path": "components/C06-faq/manifest.json",
       "version": "0.1.0",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "76d31d0f26df76899999e761e88870793ce020e5",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"

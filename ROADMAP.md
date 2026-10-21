@@ -7,7 +7,7 @@
 - [x] P0 D3: C03 CV samt gemeinsamem Unicode-Dokumentmodell und PDF/DOCX.
 - [x] P0 D4: C04 Bestandsfirmen-Suche mit ehrlichem Kontaktstatus.
 - [x] P0 D5: C05 Anschreiben, Kopieren, Mailto und Exporte.
-- [ ] P0 D6: C06 FAQ; vollständige bestehende Inhalte übernehmen, veraltete Angaben prüfen.
+- [x] P0 D6: C06 FAQ; vollständige bestehende Inhalte übernehmen, veraltete Angaben prüfen.
 - [ ] P0: Dünne AI-Studio-Shell aus gepinnten Builds; Staging-E2E und Regression.
 - [ ] P1: Dokumentcheck, Quizzes, Stadtguide, Kontaktmodul einzeln.
 - [ ] P1: Mini-CMS/XML/Admin und sichere Accounts/Serverdienste als getrennte Erweiterungen.
@@ -23,3 +23,5 @@ C03: isoliert 33/33, öffentlich 33/33; Codecommit 28baed1c7ca9bbba4b85eeedd82e5
 C04: isoliert 26/26, öffentlich 26/26; Codecommit 005ed694dfb15e4f7380ebb953ad6cbf19e860ac.
 
 C05: isoliert 33/33, öffentlich 33/33; Codecommit b6f25f1b632da8c10822c0a7e67890b08f379493.
+
+C06: isoliert 23/23, öffentlich 23/23; Codecommit 76d31d0f26df76899999e761e88870793ce020e5.

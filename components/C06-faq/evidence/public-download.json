@@ -1,0 +1,10 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/76d31d0f26df76899999e761e88870793ce020e5/components/C06-faq/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "76c88a6e385d863d467d239166a9a29c45d545102c521eff9ffe04517e949075",
+  "bytes": 15619,
+  "commit_sha": "76d31d0f26df76899999e761e88870793ce020e5",
+  "recorded_at_utc": "2026-10-21T16:55:17.784576+00:00",
+  "method": "urllib GET without Authorization/cookies; published demo separately browser-tested"
+}
