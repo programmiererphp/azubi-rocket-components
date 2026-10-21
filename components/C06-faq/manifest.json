@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C06",
   "custom_element": "azr-faq",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "76c88a6e385d863d467d239166a9a29c45d545102c521eff9ffe04517e949075"
+    "sha256": "bc8d86ee775fb177d09956d1b0251b2a311e19fc751b14a61bec557f60f1f442"
   },
   "input_attributes": [
     {

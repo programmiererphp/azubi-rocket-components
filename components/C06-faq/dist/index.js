@@ -179,6 +179,11 @@ var AzrFaq = class extends ElementBase {
     emit(this, "azr:faq-close", {});
   }
   handle(e) {
+    if (e.type === "keydown" && e.key === "Escape" && this.presentation === "drawer") {
+      e.preventDefault();
+      this.#close();
+      return;
+    }
     if (e.type === "keydown" && e.key === "Tab" && this.presentation === "drawer") {
       const nodes = [...this.shadowRoot.querySelectorAll("button:not(:disabled),input:not(:disabled),select:not(:disabled),summary,a[href]")].filter((n) => n.getClientRects().length);
       const active = this.shadowRoot.activeElement;

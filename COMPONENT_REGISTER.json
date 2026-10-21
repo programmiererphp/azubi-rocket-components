@@ -83,9 +83,9 @@
       "name": "faq",
       "tag": "azr-faq",
       "path": "components/C06-faq/manifest.json",
-      "version": "0.1.0",
-      "status": "GITHUB_VERIFIED",
-      "git_commit_sha": "76d31d0f26df76899999e761e88870793ce020e5",
+      "version": "0.1.1",
+      "status": "ISOLATED_TESTED",
+      "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"
@@ -165,8 +165,8 @@
   ],
   "shell": {
     "path": "app-shell",
-    "repository": "PENDING",
-    "status": "NOT_STARTED",
+    "repository": "programmiererphp/azubi-rocket-app",
+    "status": "MVP_IN_PROGRESS",
     "integration_after": [
       "C01",
       "C02",
