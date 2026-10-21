@@ -1,0 +1,10 @@
+{
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/b6f25f1b632da8c10822c0a7e67890b08f379493/components/C05-letter-editor/dist/index.js",
+  "reachable_anonymously": true,
+  "http_status": 200,
+  "sha256": "3ea046c96abe318af0651dfb76f113df350eddaa515e8ebf36dc6191e35afdbc",
+  "bytes": 32143,
+  "commit_sha": "b6f25f1b632da8c10822c0a7e67890b08f379493",
+  "recorded_at_utc": "2026-10-21T16:48:26.437289+00:00",
+  "method": "urllib GET without Authorization/cookies; published demo separately browser-tested"
+}
