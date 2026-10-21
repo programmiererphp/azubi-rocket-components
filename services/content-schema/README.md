@@ -1,0 +1,2 @@
+# PortalContentSchema v0.1.0
+Canonical JSON schema, XML XSD and browser parser/serializer for complete snapshots and incremental blocks. All section data is escaped JSON text. validateDocument enforces complete shape, limits, unique IDs, finite scores, safe URLs and template placeholders. DTD/entities/processing instructions/unknown roots/attributes rejected. No network, eval, storage or server-publication claims. Services are host-injected; feature components do not import one another.

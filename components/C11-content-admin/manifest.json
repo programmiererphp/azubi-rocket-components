@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C11",
+  "custom_element": "azr-content-admin",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "dd3c8290eb7386965ca2f0a887e2bc97e7c3ad1493878949a6b5b88170438c22"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "document",
+      "type": "PortalDocumentV1|null"
+    },
+    {
+      "name": "services",
+      "type": "ContentValidatorPort|null"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:content-apply",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:content-rollback",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:content-status",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md",
+  "services": [
+    {
+      "id": "content-schema",
+      "version": "0.1.0",
+      "entrypoint": "index.js",
+      "sha256": "e5e99dbbbefd4aeda48671a069bc8cd26cc90983ce03b5e16621002d97a2bef0",
+      "schema_data_sha256": "f3b2678f8c7500dacc41956f7c738748605932d10bd120927c3968aaee0b0999",
+      "network_calls": 0,
+      "dependencies": []
+    }
+  ]
+}

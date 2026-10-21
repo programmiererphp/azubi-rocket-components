@@ -154,7 +154,7 @@
       "tag": "azr-content-admin",
       "path": "components/C11-content-admin/manifest.json",
       "version": "0.1.0",
-      "status": "PLANNED",
+      "status": "ISOLATED_TESTED",
       "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",

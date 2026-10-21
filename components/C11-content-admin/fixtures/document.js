@@ -1,0 +1,433 @@
+export const document={
+  "schemaVersion": 1,
+  "content": {
+    "guide": {
+      "schemaVersion": 1,
+      "items": [
+        {
+          "id": "language",
+          "stage": "preparation",
+          "location": "all",
+          "title": {
+            "de": "Deutsch prüfen",
+            "en": "Check German",
+            "fr": "Vérifier l’allemand",
+            "ru": "Проверить немецкий"
+          },
+          "body": {
+            "de": "Frage Betrieb und Berufsschule, welche Deutschkenntnisse und Nachweise erwartet werden. Übe regelmäßig.",
+            "en": "Ask the company and vocational school which German skills and evidence they expect. Practise regularly.",
+            "fr": "Demande à l’entreprise et à l’école le niveau d’allemand et les justificatifs attendus. Entraîne-toi régulièrement.",
+            "ru": "Уточни в компании и профессиональной школе требования к немецкому и подтверждающим документам. Занимайся регулярно."
+          }
+        },
+        {
+          "id": "documents",
+          "stage": "preparation",
+          "location": "all",
+          "title": {
+            "de": "Unterlagen bereitlegen",
+            "en": "Prepare documents",
+            "fr": "Préparer les documents",
+            "ru": "Подготовить документы"
+          },
+          "body": {
+            "de": "Sammle Schulzeugnisse, vorhandene Übersetzungen und relevante Nachweise. Prüfe, ob Scans gut lesbar sind.",
+            "en": "Collect school certificates, available translations and relevant evidence. Check that scans are legible.",
+            "fr": "Rassemble tes certificats scolaires, traductions disponibles et justificatifs utiles. Vérifie la lisibilité des scans.",
+            "ru": "Собери школьные документы, имеющиеся переводы и важные подтверждения. Проверь читаемость сканов."
+          }
+        },
+        {
+          "id": "contacts",
+          "stage": "preparation",
+          "location": "all",
+          "title": {
+            "de": "Kontaktdaten kontrollieren",
+            "en": "Check contact details",
+            "fr": "Vérifier les coordonnées",
+            "ru": "Проверить контакты"
+          },
+          "body": {
+            "de": "Prüfe deine E-Mail-Adresse und Telefonnummer. Bereite die Angaben zu Schule und Erfahrung für den Lebenslauf vor.",
+            "en": "Check your email address and phone number. Prepare education and experience details for your CV.",
+            "fr": "Vérifie ton adresse e-mail et ton téléphone. Prépare tes études et expériences pour le CV.",
+            "ru": "Проверь почту и телефон. Подготовь сведения об учёбе и опыте для резюме."
+          }
+        },
+        {
+          "id": "interview",
+          "stage": "start",
+          "location": "all",
+          "title": {
+            "de": "Gespräch vorbereiten",
+            "en": "Prepare interview",
+            "fr": "Préparer l’entretien",
+            "ru": "Подготовиться к собеседованию"
+          },
+          "body": {
+            "de": "Übe kurze Antworten: Warum dieser Beruf? Warum dieser Betrieb? Was kannst du gut? Plane die Anreise oder den Videoanruf.",
+            "en": "Practise short answers: Why this occupation? Why this company? What are your strengths? Plan travel or your video call.",
+            "fr": "Prépare des réponses courtes : pourquoi ce métier, cette entreprise et quels sont tes points forts ? Prévois le trajet ou l’appel vidéo.",
+            "ru": "Подготовь короткие ответы: почему эта профессия и компания, каковы твои сильные стороны? Продумай дорогу или видеозвонок."
+          }
+        },
+        {
+          "id": "contract",
+          "stage": "start",
+          "location": "all",
+          "title": {
+            "de": "Vertrag sorgfältig prüfen",
+            "en": "Read the contract carefully",
+            "fr": "Lire le contrat attentivement",
+            "ru": "Внимательно прочитать договор"
+          },
+          "body": {
+            "de": "Lies Beruf, Beginn, Vergütung, Arbeitszeit und Urlaub. Kläre unverständliche Punkte mit dem Betrieb und bewahre eine Kopie auf.",
+            "en": "Read the occupation, start date, pay, working hours and leave. Clarify anything unclear with the company and keep a copy.",
+            "fr": "Vérifie le métier, la date de début, la rémunération, les horaires et les congés. Pose tes questions et garde une copie.",
+            "ru": "Проверь профессию, начало, оплату, рабочее время и отпуск. Уточни непонятные пункты в компании и сохрани копию."
+          }
+        },
+        {
+          "id": "residence",
+          "stage": "start",
+          "location": "deutschland",
+          "title": {
+            "de": "Aufenthalt rechtzeitig klären",
+            "en": "Clarify your residence status early",
+            "fr": "Clarifier le séjour à temps",
+            "ru": "Заранее уточнить право на пребывание"
+          },
+          "body": {
+            "de": "Prüfe das Ablaufdatum deines aktuellen Titels. Frage die zuständige Ausländerbehörde rechtzeitig, ob und wie der Wechsel zur Ausbildung in deinem Fall möglich ist.",
+            "en": "Check when your current permit expires. Ask your local immigration office in good time whether and how you can change to vocational training in your case.",
+            "fr": "Vérifie la date d’expiration de ton titre. Demande à temps au service des étrangers si et comment le changement vers la formation est possible dans ton cas.",
+            "ru": "Проверь срок действующего разрешения. Заранее уточни в ведомстве по делам иностранцев, возможен ли переход к обучению в твоём случае и как его оформить."
+          }
+        },
+        {
+          "id": "visa",
+          "stage": "start",
+          "location": "ausland",
+          "title": {
+            "de": "Visum und Einreise klären",
+            "en": "Clarify visa and entry",
+            "fr": "Clarifier le visa et l’entrée",
+            "ru": "Уточнить визу и въезд"
+          },
+          "body": {
+            "de": "Prüfe anhand deiner Staatsangehörigkeit, ob du ein Visum benötigst. Nutze die offizielle Unterlagenliste der zuständigen deutschen Auslandsvertretung.",
+            "en": "Check whether your nationality requires a visa. Use the official document list of the responsible German mission.",
+            "fr": "Vérifie si ta nationalité exige un visa. Utilise la liste officielle des documents de la représentation allemande compétente.",
+            "ru": "Уточни, нужна ли виза гражданам твоей страны. Пользуйся официальным списком документов соответствующего представительства Германии."
+          }
+        },
+        {
+          "id": "arrival",
+          "stage": "start",
+          "location": "all",
+          "title": {
+            "de": "Unterkunft und ersten Tag planen",
+            "en": "Plan housing and your first day",
+            "fr": "Prévoir le logement et le premier jour",
+            "ru": "Подготовить жильё и первый день"
+          },
+          "body": {
+            "de": "Kläre Unterkunft, Versicherung, Arbeitsweg und Ansprechpartner für den ersten Tag. Frage den Betrieb bei offenen Fragen um Hilfe.",
+            "en": "Clarify housing, insurance, travel and your contact for the first day. Ask the company for help with open questions.",
+            "fr": "Prévois le logement, l’assurance, le trajet et ton contact pour le premier jour. Demande de l’aide à l’entreprise si nécessaire.",
+            "ru": "Продумай жильё, страховку, дорогу и контактное лицо в первый день. При необходимости обратись за помощью в компанию."
+          }
+        }
+      ]
+    },
+    "companies": [
+      {
+        "id": "demo-1",
+        "name": "Demo Hotel 01",
+        "city": "Göttingen",
+        "postalCode": "37073",
+        "address": "Beispielstraße 1",
+        "website": "https://firma-1.example.invalid",
+        "email": "kontakt1@example.invalid",
+        "phone": "",
+        "category": "hotel",
+        "emailStatus": "legacy-inferred"
+      },
+      {
+        "id": "demo-2",
+        "name": "Demo Care 02",
+        "city": "Göttingen",
+        "postalCode": "37073",
+        "address": "Beispielstraße 1",
+        "website": "https://firma-2.example.invalid",
+        "email": "kontakt2@example.invalid",
+        "phone": "",
+        "category": "care",
+        "emailStatus": "legacy-literal"
+      },
+      {
+        "id": "demo-3",
+        "name": "Demo Educator 03",
+        "city": "Göttingen",
+        "postalCode": "37073",
+        "address": "Beispielstraße 1",
+        "website": "https://firma-3.example.invalid",
+        "email": "kontakt3@example.invalid",
+        "phone": "",
+        "category": "educator",
+        "emailStatus": "legacy-literal"
+      }
+    ],
+    "faq": [
+      {
+        "id": "draft",
+        "category": "Bewerbung",
+        "question": {
+          "de": "Wie speichere ich meinen Entwurf?",
+          "en": "How do I save my draft?",
+          "fr": "Comment enregistrer mon brouillon ?",
+          "ru": "Как сохранить черновик?"
+        },
+        "answer": {
+          "de": "Speichere eine lokale Entwurfsdatei und bewahre sie sicher auf.",
+          "en": "Save a local draft file and keep it safe.",
+          "fr": "Enregistre un fichier local et garde-le en sécurité.",
+          "ru": "Сохрани локальный файл черновика в безопасном месте."
+        }
+      },
+      {
+        "id": "unicode",
+        "category": "Unterlagen",
+        "question": {
+          "de": "Sind Umlaute wie München möglich?"
+        },
+        "answer": {
+          "de": "Ja, unterstützte Schriftzeichen werden im Dokument eingebettet."
+        }
+      },
+      {
+        "id": "mail",
+        "category": "Bewerbung",
+        "question": {
+          "de": "Wird meine E-Mail automatisch versendet?"
+        },
+        "answer": {
+          "de": "Nein. Prüfe und sende deine Nachricht selbst in deinem E-Mail-Programm."
+        }
+      }
+    ],
+    "quizzes": [
+      {
+        "id": "demo",
+        "title": {
+          "de": "Dein Bewerbungs-Check",
+          "en": "Your application check",
+          "fr": "Ton bilan de candidature",
+          "ru": "Проверка подготовки заявления"
+        },
+        "intro": {
+          "de": "Zwei fiktive Beispielfragen.",
+          "en": "Two demonstration questions.",
+          "fr": "Deux questions de démonstration.",
+          "ru": "Два демонстрационных вопроса."
+        },
+        "questions": [
+          {
+            "id": "documents",
+            "text": {
+              "de": "Welche Unterlagen hast du vorbereitet?",
+              "en": "Which documents have you prepared?",
+              "fr": "Quels documents as-tu préparés ?",
+              "ru": "Какие документы подготовлены?"
+            },
+            "options": [
+              {
+                "id": "all",
+                "text": {
+                  "de": "Alle angeforderten Unterlagen",
+                  "en": "All requested documents",
+                  "fr": "Tous les documents demandés",
+                  "ru": "Все необходимые документы"
+                },
+                "points": 10
+              },
+              {
+                "id": "some",
+                "text": {
+                  "de": "Einen Teil",
+                  "en": "Some",
+                  "fr": "Une partie",
+                  "ru": "Часть"
+                },
+                "points": 5
+              },
+              {
+                "id": "none",
+                "text": {
+                  "de": "Noch keine",
+                  "en": "None yet",
+                  "fr": "Pas encore",
+                  "ru": "Пока нет"
+                },
+                "points": 0
+              }
+            ],
+            "explanation": {
+              "de": "Nutze die konkrete Ausschreibung als Checkliste.",
+              "en": "Use the actual job advertisement as your checklist.",
+              "fr": "Utilise l’offre réelle comme liste de contrôle.",
+              "ru": "Используй конкретную вакансию как список требований."
+            }
+          },
+          {
+            "id": "contact",
+            "text": {
+              "de": "Hast du die Firmenkontakte geprüft?",
+              "en": "Have you checked company contacts?",
+              "fr": "As-tu vérifié les contacts ?",
+              "ru": "Проверены ли контакты компаний?"
+            },
+            "options": [
+              {
+                "id": "yes",
+                "text": {
+                  "de": "Ja",
+                  "en": "Yes",
+                  "fr": "Oui",
+                  "ru": "Да"
+                },
+                "points": 10
+              },
+              {
+                "id": "no",
+                "text": {
+                  "de": "Noch nicht",
+                  "en": "Not yet",
+                  "fr": "Pas encore",
+                  "ru": "Пока нет"
+                },
+                "points": 0
+              }
+            ]
+          }
+        ],
+        "results": [
+          {
+            "minRatio": 0,
+            "maxRatio": 1,
+            "title": {
+              "de": "Dein nächster Schritt",
+              "en": "Your next step",
+              "fr": "Ta prochaine étape",
+              "ru": "Твой следующий шаг"
+            },
+            "body": {
+              "de": "Prüfe die noch offenen Punkte in deinem Fahrplan.",
+              "en": "Review the remaining items in your roadmap.",
+              "fr": "Vérifie les points restants dans ton parcours.",
+              "ru": "Проверь оставшиеся пункты плана."
+            }
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "city": {
+        "title": {
+          "de": "Deine Stadt entdecken",
+          "en": "Discover your city",
+          "fr": "Découvrir ta ville",
+          "ru": "Открой свой город"
+        },
+        "intro": {
+          "de": "Fiktive Ressourcen zum Testen der Komponente.",
+          "en": "Fictional resources for testing this component.",
+          "fr": "Ressources fictives pour tester le composant.",
+          "ru": "Вымышленные ресурсы для проверки компонента."
+        },
+        "categoryLabels": {
+          "everyday": {
+            "de": "Alltag",
+            "en": "Everyday life",
+            "fr": "Vie quotidienne",
+            "ru": "Повседневная жизнь"
+          },
+          "nature": {
+            "de": "Natur",
+            "en": "Nature",
+            "fr": "Nature",
+            "ru": "Природа"
+          }
+        },
+        "cards": [
+          {
+            "id": "transport",
+            "category": "everyday",
+            "title": {
+              "de": "Mobilität in der Beispielstadt",
+              "en": "Getting around the example city",
+              "fr": "Se déplacer dans la ville exemple",
+              "ru": "Транспорт в городе-примере"
+            },
+            "body": {
+              "de": "Prüfe aktuelle Fahrpläne direkt beim Verkehrsunternehmen.",
+              "en": "Check current timetables with the transport operator.",
+              "fr": "Vérifie les horaires actuels auprès du réseau.",
+              "ru": "Проверь актуальное расписание у перевозчика."
+            },
+            "links": [
+              {
+                "label": {
+                  "de": "Beispielseite",
+                  "en": "Example website",
+                  "fr": "Site exemple",
+                  "ru": "Пример сайта"
+                },
+                "url": "https://example.invalid/transport"
+              }
+            ]
+          },
+          {
+            "id": "park",
+            "category": "nature",
+            "title": {
+              "de": "Park am Göttinger Beispielweg"
+            },
+            "body": {
+              "de": "Ein fiktiver Treffpunkt für Spaziergänge im Grünen."
+            },
+            "links": []
+          }
+        ]
+      }
+    },
+    "letterTemplates": {
+      "de": {
+        "subject": "Bewerbung um einen Ausbildungsplatz als {profession}",
+        "body": "Sehr geehrte Damen und Herren,\n\nich möchte {start} eine Ausbildung als {profession} bei {company} beginnen.\n\n{profile}\n\nIm Anhang sende ich Ihnen meinen Lebenslauf. Über eine Einladung zu einem persönlichen Gespräch freue ich mich.\n\nMit freundlichen Grüßen\n{name}\n{phone}\n{email}"
+      },
+      "en": {
+        "subject": "Application for vocational training as {profession}",
+        "body": "Dear Sir or Madam,\n\nI would like to start vocational training as {profession} with {company} {start}.\n\n{profile}\n\nPlease find my CV attached. I would be pleased to attend an interview.\n\nYours faithfully,\n{name}\n{phone}\n{email}"
+      },
+      "fr": {
+        "subject": "Candidature à une formation de {profession}",
+        "body": "Madame, Monsieur,\n\nJe souhaite commencer une formation de {profession} au sein de {company} {start}.\n\n{profile}\n\nVous trouverez mon CV en pièce jointe. Je vous remercie de l’attention portée à ma candidature et reste disponible pour un entretien.\n\nCordialement,\n{name}\n{phone}\n{email}"
+      },
+      "ru": {
+        "subject": "Заявление на обучение по профессии {profession}",
+        "body": "Уважаемые дамы и господа!\n\nЯ хочу начать профессиональное обучение по профессии {profession} в {company} {start}.\n\n{profile}\n\nПрилагаю своё резюме. Буду ждать приглашения на собеседование.\n\nС уважением,\n{name}\n{phone}\n{email}"
+      }
+    }
+  },
+  "design": {
+    "accent": "#0878f9",
+    "surface": "#ffffff",
+    "text": "#102352"
+  },
+  "layout": {
+    "density": "comfortable"
+  }
+};

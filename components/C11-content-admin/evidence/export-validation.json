@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "xml_well_formed": true,
+  "xsd_valid": true,
+  "json_schema_valid": true,
+  "unicode_preserved": true,
+  "faq_count": 4
+}

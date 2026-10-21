@@ -1,0 +1,9 @@
+{
+  "id": "content-schema",
+  "version": "0.1.0",
+  "entrypoint": "index.js",
+  "sha256": "e5e99dbbbefd4aeda48671a069bc8cd26cc90983ce03b5e16621002d97a2bef0",
+  "schema_data_sha256": "f3b2678f8c7500dacc41956f7c738748605932d10bd120927c3968aaee0b0999",
+  "network_calls": 0,
+  "dependencies": []
+}
