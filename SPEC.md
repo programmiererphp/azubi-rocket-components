@@ -21,3 +21,6 @@ Vor öffentlicher Endnutzer-Veröffentlichung Impressum, Datenschutzerklärung, 
 
 ## Stand D1
 C01 ist eigenständig implementiert und GITHUB_VERIFIED. 85/85 isolierte und zusätzlich 85/85 Tests gegen die öffentliche Demo bestanden. Sechs Schritte bleiben auch bei 5/6 und auf Mobile sichtbar. Kein Produktionswechsel; C02–C11 und die App-Shell folgen getrennt. Details: components/C01-journey-nav/DELIVERY.md.
+
+## D2 vor Implementierung
+Detaillierter Umfang und versionierter Vertrag: deliveries/D2-C02.md. Standortwahl und kontrollierte Checklisten als C02; C01 bleibt unabhängig und unverändert. Vollständige weitere Umsetzung vom Nutzer beauftragt.
