@@ -31,3 +31,5 @@ C06 v0.1.1: 23 isolated + 23 public tests, anonymous proof SHA 2acd394cea793abe7
 C07 v0.1.0: 23 isolated + 23 public tests, anonymous proof SHA 2acd394cea793abe780f98a002ab038e86db08c3.
 
 C08 v0.1.0: 24 isolated + 24 public tests, anonymous proof SHA 14abab681270e7858adc177afdc0bc84e8f47293.
+
+C09 v0.1.0: 22 isolated + 22 public tests, anonymous proof SHA 694201d3caa0f8f6ba8a52d9050cb8f603113363.
