@@ -4,7 +4,7 @@
   "custom_element": "azr-question-form",
   "version": "0.1.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0"
