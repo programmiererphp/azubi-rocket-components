@@ -112,8 +112,8 @@
       "tag": "azr-quiz",
       "path": "components/C08-quiz/manifest.json",
       "version": "0.1.0",
-      "status": "ISOLATED_TESTED",
-      "git_commit_sha": null,
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "14abab681270e7858adc177afdc0bc84e8f47293",
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",
         "AZR-DETAIL-01..05"

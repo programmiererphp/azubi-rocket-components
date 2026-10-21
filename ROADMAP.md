@@ -29,3 +29,5 @@ C06: isoliert 23/23, öffentlich 23/23; Codecommit 76d31d0f26df76899999e761e8887
 C06 v0.1.1: 23 isolated + 23 public tests, anonymous proof SHA 2acd394cea793abe780f98a002ab038e86db08c3.
 
 C07 v0.1.0: 23 isolated + 23 public tests, anonymous proof SHA 2acd394cea793abe780f98a002ab038e86db08c3.
+
+C08 v0.1.0: 24 isolated + 24 public tests, anonymous proof SHA 14abab681270e7858adc177afdc0bc84e8f47293.
