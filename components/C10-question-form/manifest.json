@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C10",
+  "custom_element": "azr-question-form",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "value",
+      "type": "QuestionDraftV1"
+    },
+    {
+      "name": "services",
+      "type": "QuestionHandoffPort|null"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:question-change",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:question-handoff",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md",
+  "services": [
+    {
+      "id": "question-handoff",
+      "version": "0.1.0",
+      "entrypoint": "index.js",
+      "sha256": "c015732826be34581f71aa95f8cc023e8b1562c21e02e9aa255147047623aaa6",
+      "network_calls": 0,
+      "dependencies": []
+    }
+  ]
+}

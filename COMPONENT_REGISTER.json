@@ -140,7 +140,7 @@
       "tag": "azr-question-form",
       "path": "components/C10-question-form/manifest.json",
       "version": "0.1.0",
-      "status": "PLANNED",
+      "status": "ISOLATED_TESTED",
       "git_commit_sha": null,
       "evidence_refs": [
         "AZR-MASTER-FLOW-03",

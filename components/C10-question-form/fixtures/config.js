@@ -1,0 +1,1 @@
+export const config={baseUrl:'https://docs.google.com/forms/d/e/EXAMPLE_NOT_A_REAL_FORM/viewform',entries:{name:'1',email:'2',whatsapp:'3',status:'4',question:'5',consent:'6'},statusOptions:{aupair:'Au-pair in Deutschland',abroad:'Bewerber aus dem Ausland',fsj:'FSJ / BFD',language:'Sprachschüler',trainee:'Azubi'},consentValue:'Demonstration consent'};

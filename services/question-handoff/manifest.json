@@ -1,0 +1,8 @@
+{
+  "id": "question-handoff",
+  "version": "0.1.0",
+  "entrypoint": "index.js",
+  "sha256": "c015732826be34581f71aa95f8cc023e8b1562c21e02e9aa255147047623aaa6",
+  "network_calls": 0,
+  "dependencies": []
+}
