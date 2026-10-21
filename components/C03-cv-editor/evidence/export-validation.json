@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "documents": [
+    {
+      "language": "de",
+      "pdf_pages": 1,
+      "pdf_bytes": 13187,
+      "docx_bytes": 10246,
+      "unicode": true
+    },
+    {
+      "language": "en",
+      "pdf_pages": 1,
+      "pdf_bytes": 13218,
+      "docx_bytes": 10244,
+      "unicode": true
+    },
+    {
+      "language": "fr",
+      "pdf_pages": 1,
+      "pdf_bytes": 13681,
+      "docx_bytes": 10261,
+      "unicode": true
+    },
+    {
+      "language": "ru",
+      "pdf_pages": 1,
+      "pdf_bytes": 15267,
+      "docx_bytes": 10316,
+      "unicode": true
+    }
+  ],
+  "long_pdf_pages": 3,
+  "long_pdf_complete": true,
+  "photo_pdf_and_docx": true
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "documents": [
+    {
+      "file": "sample-de",
+      "pages": 1,
+      "bounds": "passed"
+    },
+    {
+      "file": "sample-ru",
+      "pages": 1,
+      "bounds": "passed"
+    },
+    {
+      "file": "photo",
+      "pages": 1,
+      "bounds": "passed"
+    },
+    {
+      "file": "long",
+      "pages": 3,
+      "bounds": "passed"
+    }
+  ]
+}

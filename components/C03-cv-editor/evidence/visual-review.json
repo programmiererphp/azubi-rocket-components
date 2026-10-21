@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "reviewed_at_utc": "2026-10-21T16:10:25.847245+00:00",
+  "pdf_pages_reviewed": 6,
+  "docx_pages_reviewed": 8,
+  "findings_fixed": [
+    "PDF header rule touched first heading; added vertical gap",
+    "Removed optional-input wording from exported birth/nationality labels"
+  ],
+  "checks": [
+    "Unicode readable",
+    "No overlap/clipping",
+    "Photo preserved",
+    "Long 3-page PDF/DOCX complete"
+  ],
+  "known_limits": [
+    "Chromium test bulk downloads paced at 250ms to avoid browser rate throttling"
+  ]
+}

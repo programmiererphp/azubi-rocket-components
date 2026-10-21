@@ -1,0 +1,5 @@
+import{readFile,writeFile,mkdir}from'node:fs/promises';import{createHash}from'node:crypto';import{pathToFileURL}from'node:url';
+const{build}=process.env.ESBUILD_MODULE?await import(pathToFileURL(process.env.ESBUILD_MODULE).href):await import('esbuild');
+const base=new URL('./',import.meta.url);await mkdir(new URL('dist/',base),{recursive:true});
+await build({absWorkingDir:base.pathname,entryPoints:['src/index.js'],outfile:'dist/index.js',bundle:true,format:'esm',target:'es2022',minify:true,legalComments:'eof',loader:{'.ttf':'binary'},nodePaths:process.env.EXPORT_NODE_MODULES?[process.env.EXPORT_NODE_MODULES]:[]});
+const data=await readFile(new URL('dist/index.js',base));await writeFile(new URL('manifest.json',base),JSON.stringify({id:'document-exporter',version:'0.1.0',entrypoint:'dist/index.js',sha256:createHash('sha256').update(data).digest('hex'),formats:['pdf','docx'],network_calls:0,dependencies:{'pdf-lib':'1.17.1','@pdf-lib/fontkit':'1.1.1',docx:'9.13.0'},font:'DejaVu Sans — FONT-LICENSE.txt'},null,2)+'\n');console.log({bytes:data.length,sha256:createHash('sha256').update(data).digest('hex')});

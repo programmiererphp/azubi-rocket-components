@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C03",
+  "custom_element": "azr-cv-editor",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "3fcf3baea19d983e89447e5b60d0389cb3de9da37f449f561aced4d352bb732f"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "cvData",
+      "schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "personal"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "personal": {
+            "type": "object"
+          },
+          "education": {
+            "type": "array",
+            "maxItems": 30
+          },
+          "experience": {
+            "type": "array",
+            "maxItems": 30
+          },
+          "photo": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2000000
+          }
+        }
+      }
+    },
+    {
+      "name": "services",
+      "port": "exportDocument({format,document,language,filename}) -> Promise<{blob,filename}>"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:cv-change",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "cvData"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "cvData": {
+            "type": "object",
+            "required": [
+              "schemaVersion",
+              "personal"
+            ],
+            "properties": {
+              "schemaVersion": {
+                "const": 1
+              },
+              "personal": {
+                "type": "object"
+              },
+              "education": {
+                "type": "array",
+                "maxItems": 30
+              },
+              "experience": {
+                "type": "array",
+                "maxItems": 30
+              },
+              "photo": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2000000
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "azr:export-status",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "actionId",
+          "format",
+          "status"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "actionId": {
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "pdf",
+              "docx"
+            ]
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "success",
+              "error"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "azr:component-error",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "code",
+          "attribute"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "const": "invalid-attribute"
+          },
+          "attribute": {
+            "const": "language"
+          }
+        }
+      }
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md",
+  "services": [
+    {
+      "name": "DocumentExporter",
+      "version": "0.1.0",
+      "sha256": "d5b0960fae287b21afc56f370400a20261e8a6f0859a148e960d537caf3234a9"
+    }
+  ]
+}

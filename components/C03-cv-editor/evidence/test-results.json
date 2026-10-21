@@ -1,0 +1,163 @@
+{
+  "component": "C03",
+  "version": "0.1.0",
+  "artifact_sha256": "3fcf3baea19d983e89447e5b60d0389cb3de9da37f449f561aced4d352bb732f",
+  "passed": true,
+  "url": "http://127.0.0.1:36691/demo/index.html",
+  "recorded_at_utc": "2026-10-21T16:06:54.683Z",
+  "browser": "153.0.8010.0",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 33,
+  "passed_count": 33,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Pinned shared exporter integrity",
+      "passed": true
+    },
+    {
+      "name": "Native edit updates model, preview and focus without losing typed text",
+      "passed": true
+    },
+    {
+      "name": "Education add/edit/remove preserves other tabs and state",
+      "passed": true
+    },
+    {
+      "name": "Historic combined language level survives language and tab switches",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Mobile preview toggle and accessible keyboard fields work",
+      "passed": true
+    },
+    {
+      "name": "External data are copied and malformed inputs rejected",
+      "passed": true
+    },
+    {
+      "name": "Missing service and external busy disable exports honestly",
+      "passed": true
+    },
+    {
+      "name": "Required names and invalid email prevent downloads; values recover",
+      "passed": true
+    },
+    {
+      "name": "Real de PDF and DOCX downloads",
+      "passed": true
+    },
+    {
+      "name": "Real en PDF and DOCX downloads",
+      "passed": true
+    },
+    {
+      "name": "Real fr PDF and DOCX downloads",
+      "passed": true
+    },
+    {
+      "name": "Real ru PDF and DOCX downloads",
+      "passed": true
+    },
+    {
+      "name": "Long content creates complete additional PDF pages",
+      "passed": true
+    },
+    {
+      "name": "Optional photo is processed locally and included in both exports",
+      "passed": true
+    },
+    {
+      "name": "Corrupt photo shows a recoverable error",
+      "passed": true
+    },
+    {
+      "name": "Export errors unblock retry; duplicate requests are prevented",
+      "passed": true
+    },
+    {
+      "name": "Unsafe input renders as text, no element injection",
+      "passed": true
+    },
+    {
+      "name": "Duplicate import is safe; reconnect does not duplicate changes",
+      "passed": true
+    },
+    {
+      "name": "Independent PDF/DOCX parsing verifies Unicode, completeness and photos",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}

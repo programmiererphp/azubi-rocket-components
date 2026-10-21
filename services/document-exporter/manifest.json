@@ -1,0 +1,17 @@
+{
+  "id": "document-exporter",
+  "version": "0.1.0",
+  "entrypoint": "dist/index.js",
+  "sha256": "d5b0960fae287b21afc56f370400a20261e8a6f0859a148e960d537caf3234a9",
+  "formats": [
+    "pdf",
+    "docx"
+  ],
+  "network_calls": 0,
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "@pdf-lib/fontkit": "1.1.1",
+    "docx": "9.13.0"
+  },
+  "font": "DejaVu Sans — FONT-LICENSE.txt"
+}
