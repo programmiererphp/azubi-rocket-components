@@ -1,0 +1,127 @@
+{
+  "component": "C10",
+  "version": "0.1.0",
+  "artifact_sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0",
+  "passed": true,
+  "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C10-question-form/demo/index.html",
+  "recorded_at_utc": "2026-10-21T20:53:24.736Z",
+  "browser": "151.0.7922.34",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 24,
+  "passed_count": 24,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Required fields and consent guide progression; invalid email blocked",
+      "passed": true
+    },
+    {
+      "name": "Actual handoff URL contains all six correctly encoded fields, no sent claim",
+      "passed": true
+    },
+    {
+      "name": "Editing invalidates prepared URL and locale switch preserves text",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Clipboard copy returns the actual draft text",
+      "passed": true
+    },
+    {
+      "name": "Long content has honest unprefilled fallback without loss",
+      "passed": true
+    },
+    {
+      "name": "Defensive copies and malformed values are validated atomically",
+      "passed": true
+    },
+    {
+      "name": "Missing service and busy disable handoff honestly",
+      "passed": true
+    },
+    {
+      "name": "Service failure allows retry, duplicate requests prevented, events omit personal data",
+      "passed": true
+    },
+    {
+      "name": "Unsafe gateway URLs are rejected without navigation",
+      "passed": true
+    },
+    {
+      "name": "Injected question stays text and repeat import is safe",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}
