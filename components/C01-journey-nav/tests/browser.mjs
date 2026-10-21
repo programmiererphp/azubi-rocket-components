@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 // Browser plugin not available in the authoring environment; regular Playwright is used.
 const modulePath = process.env.PLAYWRIGHT_MODULE;
 const { chromium } = modulePath ? await import(pathToFileURL(modulePath).href) : await import('playwright');
-const root = fileURLToPath(new URL('../', import.meta.url));
+const root = resolve(fileURLToPath(new URL('../', import.meta.url)));
 const evidence = resolve(root, 'evidence');
 await mkdir(evidence, { recursive: true });
 const server = createServer(async (req, res) => {
@@ -28,7 +28,8 @@ const browser = await chromium.launch({ headless: true,
   ...(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {}) });
 const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
 const page = await context.newPage();
-const errors = [], failedRequests = [], results = [];
+const errors = [], failedRequests = [], requests = [], results = [];
+page.on('request', request => requests.push(request.url()));
 page.on('pageerror', error => errors.push(error.message));
 page.on('console', msg => { if (['error', 'warning'].includes(msg.type())) errors.push(msg.text()); });
 page.on('requestfailed', request => failedRequests.push({ url: request.url(), error: request.failure()?.errorText }));
@@ -176,6 +177,7 @@ try {
   });
   await test('No external service requests, failed requests or relevant browser errors',async()=>{
     assert.deepEqual(failedRequests,[]);assert.deepEqual(errors,[]);
+    assert.ok(requests.every(url=>new URL(url).origin===new URL(base).origin));
   });
 } catch(error){failure=error;}
 finally {
