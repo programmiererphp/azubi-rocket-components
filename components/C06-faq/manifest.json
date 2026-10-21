@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C06",
+  "custom_element": "azr-faq",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "76c88a6e385d863d467d239166a9a29c45d545102c521eff9ffe04517e949075"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "enum": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean"
+    },
+    {
+      "name": "presentation",
+      "enum": [
+        "page",
+        "drawer"
+      ]
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "items",
+      "type": "FAQItem[]|null"
+    },
+    {
+      "name": "filters",
+      "type": "FAQFilters"
+    },
+    {
+      "name": "open",
+      "type": "boolean"
+    },
+    {
+      "name": "error",
+      "type": "string"
+    }
+  ],
+  "emitted_events": [
+    {
+      "name": "azr:faq-filter-change",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:faq-close",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    },
+    {
+      "name": "azr:component-error",
+      "schema_version": 1,
+      "bubbles": true,
+      "composed": true
+    }
+  ],
+  "dependencies": [],
+  "locales": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "runtime_budget": {
+    "ai_calls": 0,
+    "network_calls": 0
+  },
+  "rights": "RIGHTS.md"
+}

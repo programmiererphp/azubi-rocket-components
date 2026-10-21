@@ -1,0 +1,123 @@
+{
+  "component": "C06",
+  "version": "0.1.0",
+  "artifact_sha256": "76c88a6e385d863d467d239166a9a29c45d545102c521eff9ffe04517e949075",
+  "passed": true,
+  "url": "http://127.0.0.1:44767/demo/index.html",
+  "recorded_at_utc": "2026-10-21T16:52:58.169Z",
+  "browser": "153.0.8010.0",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 23,
+  "passed_count": 23,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Search matches questions and answers with diacritics ignored",
+      "passed": true
+    },
+    {
+      "name": "Category/query combine and reset restores results",
+      "passed": true
+    },
+    {
+      "name": "Missing translation is visibly identified as German",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Drawer enters real modal and traps keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "Drawer typing, close control and repeated reopen work",
+      "passed": true
+    },
+    {
+      "name": "Malformed data rejected atomically; data copies isolated",
+      "passed": true
+    },
+    {
+      "name": "Loading, busy, empty and error states are honest and recoverable",
+      "passed": true
+    },
+    {
+      "name": "Plaintext injection never becomes executable markup",
+      "passed": true
+    },
+    {
+      "name": "Reconnect and repeated import do not duplicate emitted changes",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}
