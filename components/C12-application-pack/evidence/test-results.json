@@ -1,15 +1,15 @@
 {
   "component": "C12",
-  "version": "0.1.0",
-  "artifact_sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1",
+  "version": "0.1.1",
+  "artifact_sha256": "08b7e56eb968609f5b61b48edebb12597d910c82609ac3f117fce0dbf460f6ee",
   "passed": true,
-  "url": "http://127.0.0.1:38271/demo/index.html",
-  "recorded_at_utc": "2026-10-27T17:08:38.836Z",
+  "url": "http://127.0.0.1:34805/demo/index.html",
+  "recorded_at_utc": "2026-10-27T17:17:19.906Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
-  "test_count": 26,
-  "passed_count": 26,
+  "test_count": 27,
+  "passed_count": 27,
   "results": [
     {
       "name": "Identity, meaningful component and exact artifact hash",
@@ -101,6 +101,10 @@
     },
     {
       "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Slow file restoration disables the picker until settled; storage failure stays visible",
       "passed": true
     },
     {
