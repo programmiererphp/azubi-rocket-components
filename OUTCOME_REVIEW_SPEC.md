@@ -39,3 +39,8 @@ Source/version integrity; existing isolated component tests and new optional-pro
 Portal tests: French applicant in Madagascar from empty context -> understandable start -> CV -> company -> German letter -> certificates -> review -> actual PDFs/eml/ZIP/CSV/mailto without sending. Repeat critical branches de/en/fr/ru at320/390/1440, keyboard and focus, invalid inputs, locale/navigation/reload, CMS changes and original regressions. Capture and inspect first viewport plus result screens. Record environment-specific missing emoji fonts separately from product defects. Original production remains untouched.
 
 Sources: https://www.arbeitsagentur.de/en/working-in-germany/vocational-training ; https://antananarivo.diplo.de/mg-de/service/05-visaeinreise/2753522-2753522 ; https://www.rfc-editor.org/info/rfc6068/ ; https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share .
+
+## Audit follow-up before code
+
+Fresh integrated mobile QA found the abroad location choice below the initial 390×844 viewport. D12a additionally versions C02 with optional compact orientation cards and showShortcuts (defaults preserve the existing host contract). The portal uses compact cards and a single preparation action. Investigate and prevent selecting certificates while asynchronous local storage is loading; C12 exposes a disabled file input during that phase, rejects stale jobs and retains actual accepted files. New component versions repeat isolated, published and anonymous exact-hash gates before shell pinning.
+
