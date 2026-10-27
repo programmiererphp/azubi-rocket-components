@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C01",
   "custom_element": "azr-journey-nav",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "a54fdf23ee3ad772567c35da5a6478c3bb4063fbe75bc19bce6dddb574120d1c"
+    "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1"
   },
   "input_attributes": [
     {
@@ -85,6 +85,20 @@
     {
       "name": "busy",
       "type": "boolean"
+    },
+    {
+      "name": "compact",
+      "schema": {
+        "type": "boolean"
+      },
+      "default": false
+    },
+    {
+      "name": "showControls",
+      "schema": {
+        "type": "boolean"
+      },
+      "default": true
     }
   ],
   "emitted_events": [

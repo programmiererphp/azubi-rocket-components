@@ -57,6 +57,15 @@ const styles = `
     .track { margin:16px 0; }
     .action { padding:10px 15px; }
   }
+  nav.compact { padding:12px; border-radius:13px; }
+  .compact header { margin-bottom:5px; justify-content:flex-end; }
+  .compact h2 { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  .compact .count { margin:0; font-size:11px; }
+  .compact .step { min-height:64px; padding:8px 3px; gap:7px; }
+  .compact .number { width:24px; height:24px; font-size:12px; }
+  .compact .label { font-size:12px; }
+  .compact .track { height:3px; margin:9px 0 0; }
+  .compact footer { margin-top:12px; }
   @media(prefers-reduced-motion:no-preference) { .fill { transition:width .2s ease; } }
 `;
 
@@ -65,13 +74,15 @@ export class AzrJourneyNav extends HTMLElement {
   #state = { currentStep: 1, completedSteps: [], availableSteps: [...ALL_STEPS] };
   #language = 'de';
   #busy = false;
+  #compact = false;
+  #showControls = true;
   #controller;
 
   constructor() { super(); this.attachShadow({ mode: 'open' }); }
 
   connectedCallback() {
     // Respect a property assigned by a host before this module was imported.
-    for (const key of ['state', 'language', 'busy']) {
+    for (const key of ['state', 'language', 'busy', 'compact', 'showControls']) {
       if (Object.prototype.hasOwnProperty.call(this, key)) {
         const value = this[key]; delete this[key]; this[key] = value;
       }
@@ -84,6 +95,11 @@ export class AzrJourneyNav extends HTMLElement {
   }
 
   disconnectedCallback() { this.#controller?.abort(); this.#controller = undefined; }
+
+  get compact() { return this.#compact; }
+  set compact(value) { if(typeof value !== 'boolean') throw new TypeError('compact must be boolean'); this.#compact=value; this.#render(); }
+  get showControls() { return this.#showControls; }
+  set showControls(value) { if(typeof value !== 'boolean') throw new TypeError('showControls must be boolean'); this.#showControls=value; this.#render(); }
 
   get state() { return validateState(this.#state); }
   set state(value) { this.#state = validateState(value); this.#render(); }
@@ -166,15 +182,15 @@ export class AzrJourneyNav extends HTMLElement {
         <span class="label">${t.steps[i]}</span></button></li>`;
     }).join('');
     this.shadowRoot.innerHTML = `<style>${styles}</style>
-      <nav part="navigation" lang="${this.#language}" aria-label="${t.nav}" aria-busy="${this.#busy}">
+      <nav class="${this.#compact ? 'compact' : ''}" part="navigation" lang="${this.#language}" aria-label="${t.nav}" aria-busy="${this.#busy}">
         <header><h2>${t.title}</h2><span class="count" aria-live="polite">${completedSteps.length} ${t.completed}</span></header>
         <ol>${steps}</ol>
         <div class="track" aria-hidden="true"><div class="fill" style="width:${completedSteps.length / 6 * 100}%"></div></div>
-        <footer><button type="button" class="action" data-action="previous" data-focus="previous"
+        ${this.#showControls ? `<footer><button type="button" class="action" data-action="previous" data-focus="previous"
           ${currentStep === 1 || disabled(currentStep - 1) ? 'disabled' : ''}>← ${t.previous}</button>
           <span class="status" role="status">${this.#busy ? t.busy : currentStep + ' / 6'}</span>
           <button type="button" class="action next" data-action="next" data-focus="next"
-          ${currentStep === 6 || disabled(currentStep + 1) ? 'disabled' : ''}>${t.next} →</button></footer>
+          ${currentStep === 6 || disabled(currentStep + 1) ? 'disabled' : ''}>${t.next} →</button></footer>` : ''}
       </nav>`;
     if (focusKey) {
       const target = [...this.shadowRoot.querySelectorAll('button')].find(b => b.dataset.focus === focusKey);

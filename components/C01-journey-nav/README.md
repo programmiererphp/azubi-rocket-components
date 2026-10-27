@@ -20,3 +20,6 @@ Demo: `demo/index.html`, über einen HTTP-Server öffnen. Der Demo-Host übernim
 Build: `npm run build`. Tests: nach Installation der in package.json gepinnten Playwright-Version und eines passenden Chromium `npm test`. Alternativ PLAYWRIGHT_MODULE auf ein vorhandenes Playwright index.mjs setzen und bei Bedarf PLAYWRIGHT_EXECUTABLE_PATH. Tests starten ihren eigenen lokalen HTTP-Server und prüfen denselben dist-Build wie die Demo. Testevidenz enthält echte Browseraufnahmen; keine erzeugten Mockups.
 
 Styling über CSS-Variablen und `::part(navigation)` laut manifest.json. Keine komponentenübergreifenden Imports. Rechte siehe RIGHTS.md. Noch keine Einbindung in die produktive App.
+
+## Applicant outcome update
+Optional compact:boolean (defaultfalse) and showControls:boolean (defaulttrue). Compact retains every label, 3columns on mobile and keyboard navigation; hiding controls lets the host own the single next action.

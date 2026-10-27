@@ -3,3 +3,6 @@
 Native `<azr-letter-editor>`, Shadow DOM, eigenständiger ESM-Build. Vertrag und Ereignisse: manifest.json. Umfang und Akzeptanz: /deliveries/D5-C05.md. Demo: demo/index.html. Rechte: RIGHTS.md. Keine privaten Originaldaten.
 
 Build: npm install --ignore-scripts, dann npm run build. Tests: npm test mit installiertem Playwright-Chromium; alternativ PLAYWRIGHT_MODULE und PLAYWRIGHT_EXECUTABLE_PATH auf vorhandene Testwerkzeuge setzen. Tests arbeiten ohne App-Shell und ausschließlich mit synthetischen Daten.
+
+## Applicant outcome update
+Optional documentLanguage:de/en/fr/ru/null; recipientControlled:boolean (defaultfalse) preserves host-provided recipient fields; presentation:full/editor (defaultfull) supports focused editing without duplicate export/mail actions; professions:[{value,label}] (max100) supplies safe native input suggestions. Default behavior remains compatible.

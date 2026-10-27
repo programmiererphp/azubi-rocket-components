@@ -32,6 +32,18 @@ jobs:
       - name: Browser tests on desktop and mobile
         working-directory: components/C01-journey-nav
         run: npm test
+      - name: Wait for exact public artifact
+        working-directory: components/C01-journey-nav
+        run: |
+          expected_hash=$(node -p "JSON.parse(require('fs').readFileSync('manifest.json')).entrypoints.sha256")
+          for attempt in $(seq 1 24); do
+            if curl -fsSL 'https://programmiererphp.github.io/azubi-rocket-components/components/C01-journey-nav/dist/index.js' -o /tmp/c01-public.js; then
+              actual_hash=$(sha256sum /tmp/c01-public.js | cut -d' ' -f1)
+              if [ "$actual_hash" = "$expected_hash" ]; then exit 0; fi
+            fi
+            sleep 5
+          done
+          exit 1
       - name: Verify published demo on desktop and mobile
         working-directory: components/C01-journey-nav
         env:
@@ -49,4 +61,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add components/C01-journey-nav/evidence/
           git diff --cached --quiet || git commit -m 'Record actual C01 desktop/mobile browser evidence [skip ci]'
+          git pull --rebase origin main
           git push origin HEAD:main

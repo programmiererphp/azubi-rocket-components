@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C05",
   "custom_element": "azr-letter-editor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "3ea046c96abe318af0651dfb76f113df350eddaa515e8ebf36dc6191e35afdbc"
+    "sha256": "eed0a4850a4c0661401a3b233f041eea395188fc5195753138d510604b46984e"
   },
   "input_attributes": [
     {
@@ -44,6 +44,60 @@
     {
       "name": "services",
       "type": "DocumentExportPort|null"
+    },
+    {
+      "name": "documentLanguage",
+      "schema": {
+        "enum": [
+          "de",
+          "en",
+          "fr",
+          "ru",
+          null
+        ]
+      },
+      "default": null
+    },
+    {
+      "name": "recipientControlled",
+      "schema": {
+        "type": "boolean"
+      },
+      "default": false
+    },
+    {
+      "name": "presentation",
+      "schema": {
+        "enum": [
+          "full",
+          "editor"
+        ]
+      },
+      "default": "full"
+    },
+    {
+      "name": "professions",
+      "schema": {
+        "type": "array",
+        "maxItems": 100,
+        "items": {
+          "type": "object",
+          "required": [
+            "value",
+            "label"
+          ],
+          "properties": {
+            "value": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 200
+            }
+          }
+        }
+      }
     }
   ],
   "emitted_events": [

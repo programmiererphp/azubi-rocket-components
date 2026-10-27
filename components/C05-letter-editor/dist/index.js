@@ -120,6 +120,10 @@ function templates(value) {
 }
 var fill = (text, values) => text.replace(/\{([^{}]*)\}/g, (_, key) => values[key] ?? "").replace(/\n{3,}/g, "\n\n").trim();
 var AzrLetterEditor = class extends ElementBase {
+  #documentLanguage = null;
+  #recipientControlled = false;
+  #presentation = "full";
+  #professions = [];
   #data = normalize({ schemaVersion: 1 });
   #cv = null;
   #company = null;
@@ -133,7 +137,39 @@ var AzrLetterEditor = class extends ElementBase {
   #preview = false;
   #operation = 0;
   #urls = /* @__PURE__ */ new Map();
-  upgradeProperties = ["letterData", "cvData", "company", "templates", "services", "language", "busy"];
+  upgradeProperties = ["letterData", "cvData", "company", "templates", "services", "language", "busy", "documentLanguage", "recipientControlled", "presentation", "professions"];
+  get documentLanguage() {
+    return this.#documentLanguage ?? this.language;
+  }
+  set documentLanguage(v) {
+    if (v !== null && !Object.hasOwn(words, v)) throw new TypeError("Invalid document language");
+    this.#documentLanguage = v;
+    this.render();
+  }
+  get recipientControlled() {
+    return this.#recipientControlled;
+  }
+  set recipientControlled(v) {
+    if (typeof v !== "boolean") throw new TypeError("recipientControlled must be boolean");
+    this.#recipientControlled = v;
+    this.render();
+  }
+  get presentation() {
+    return this.#presentation;
+  }
+  set presentation(v) {
+    if (!["full", "editor"].includes(v)) throw new TypeError("Invalid presentation");
+    this.#presentation = v;
+    this.render();
+  }
+  get professions() {
+    return copy(this.#professions);
+  }
+  set professions(v) {
+    if (!Array.isArray(v) || v.length > 100 || v.some((x) => !x || typeof x.value !== "string" || typeof x.label !== "string" || x.value.length > 200 || x.label.length > 200)) throw new TypeError("Invalid professions");
+    this.#professions = copy(v);
+    this.render();
+  }
   get letterData() {
     return copy(this.#data);
   }
@@ -180,9 +216,11 @@ var AzrLetterEditor = class extends ElementBase {
     }
     if (/[\r\n]/.test(next.email)) throw new TypeError("Invalid company email");
     if (this.#company?.id !== next.id) {
-      this.#data.recipientName = next.name;
-      this.#data.recipientEmail = next.emailStatus === "legacy-inferred" ? "" : next.email;
-      this.#review = Boolean(this.#data.body);
+      if (!this.#recipientControlled) {
+        this.#data.recipientName = next.name;
+        this.#data.recipientEmail = next.emailStatus === "legacy-inferred" ? "" : next.email;
+      }
+      this.#review = Boolean(this.#data.body) && !this.#recipientControlled;
     }
     this.#company = next;
     this.render();
@@ -231,7 +269,7 @@ var AzrLetterEditor = class extends ElementBase {
       this.shadowRoot.querySelector("[data-field=senderName]")?.reportValidity();
       return;
     }
-    const t = words[this.language], template = this.#templates?.[this.language] ?? { subject: t.subjectTemplate, body: t.bodyTemplate }, p = this.#cv?.personal ?? {};
+    const t = words[this.documentLanguage], template = this.#templates?.[this.documentLanguage] ?? { subject: t.subjectTemplate, body: t.bodyTemplate }, p = this.#cv?.personal ?? {};
     const values = { profession: this.#data.profession, company: this.#data.recipientName || t.companyFallback, start: this.#data.startingDate ? fill(t.startTemplate, { date: this.#data.startingDate }) : t.startFallback, profile: this.#cv?.profile?.trim() || t.genericProfile, name: this.#sender(), phone: p.phone ?? "", email: p.email ?? "" };
     this.#undo = { subject: this.#data.subject, body: this.#data.body };
     this.#data.subject = fill(template.subject, values);
@@ -248,7 +286,7 @@ var AzrLetterEditor = class extends ElementBase {
   }
   #document() {
     const p = this.#cv?.personal ?? {};
-    return { title: this.#sender(), subtitle: this.#data.subject, contact: [p.address, [p.postalCode, p.city].filter(Boolean).join(" "), p.country, p.email, p.phone].filter(Boolean).join(" \xB7 "), sections: [{ heading: "", body: [this.#data.recipientName, this.#company?.address, [this.#company?.postalCode, this.#company?.city].filter(Boolean).join(" ")].filter(Boolean).join("\n") }, { heading: "", body: [p.city, new Intl.DateTimeFormat(this.language, { dateStyle: "long", timeZone: "Europe/Berlin" }).format(/* @__PURE__ */ new Date())].filter(Boolean).join(", ") }, { heading: "", body: this.#data.body }] };
+    return { title: this.#sender(), subtitle: this.#data.subject, contact: [p.address, [p.postalCode, p.city].filter(Boolean).join(" "), p.country, p.email, p.phone].filter(Boolean).join(" \xB7 "), sections: [{ heading: "", body: [this.#data.recipientName, this.#company?.address, [this.#company?.postalCode, this.#company?.city].filter(Boolean).join(" ")].filter(Boolean).join("\n") }, { heading: "", body: [p.city, new Intl.DateTimeFormat(this.documentLanguage, { dateStyle: "long", timeZone: "Europe/Berlin" }).format(/* @__PURE__ */ new Date())].filter(Boolean).join(", ") }, { heading: "", body: this.#data.body }] };
   }
   async #copy() {
     try {
@@ -273,7 +311,7 @@ var AzrLetterEditor = class extends ElementBase {
     this.render();
     emit(this, "azr:export-status", { actionId, format, status: "pending" });
     try {
-      const result = await this.#services.exportDocument({ format, document: this.#document(), language: this.language, filename: t.application + "_" + this.#sender() });
+      const result = await this.#services.exportDocument({ format, document: this.#document(), language: this.documentLanguage, filename: words[this.documentLanguage].application + "_" + this.#sender() });
       if (operation !== this.#operation) return;
       if (!result?.blob || typeof result.blob.arrayBuffer !== "function" || typeof result.filename !== "string") throw new TypeError("Invalid export result");
       const url = URL.createObjectURL(result.blob), a = document.createElement("a");
@@ -326,8 +364,8 @@ var AzrLetterEditor = class extends ElementBase {
   }
   render() {
     const t = words[this.language], locked = this.busy || this.#exporting, disabled = locked ? "disabled" : "", mail = this.#mail();
-    const input = (key, extra = "") => `<label>${t[key]}<input data-key="${key}" data-field="${key}" value="${esc(this.#data[key])}" maxlength="1000" ${extra}></label>`;
-    this.paint(`<style>.letter-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px}fieldset{padding:0;border:0;margin:0;min-width:0}.preview-toggle{display:none}.letter-preview{align-self:start;position:sticky;top:16px}@media(max-width:800px){.letter-grid{grid-template-columns:1fr}.letter-preview{position:static}.preview-toggle{display:flex;width:100%;margin-bottom:12px}.preview-content[data-open=false]{display:none}}</style><section lang="${this.language}"><h1>${t.title}</h1><p>${t.intro}</p>${this.#review ? `<p class="notice">${t.check}</p>` : ""}<div class="letter-grid"><div><form><fieldset ${disabled}><div class="grid">${input("profession", "required")}${input("startingDate")}</div>${!this.#cvName() ? input("senderName", "required") : ""}<div class="grid">${input("recipientName")}${input("recipientEmail", 'type="email"')}</div>${this.#company?.emailStatus === "legacy-inferred" ? `<p class="notice">${t.inferred}</p>` : ""}<div class="actions" style="margin-bottom:18px"><button type="button" class="primary" data-key="template" data-template ${!this.#sender() || !this.#data.profession.trim() ? "disabled" : ""}>${t.template}</button>${this.#undo ? `<button type="button" data-undo>${t.undo}</button>` : ""}</div>${input("subject", "required")}<label>${t.body}<textarea data-key="body" data-field="body" style="min-height:320px" maxlength="30000" required>${esc(this.#data.body)}</textarea></label></fieldset></form></div><aside class="card letter-preview"><button type="button" class="preview-toggle" data-preview aria-controls="letter-preview" aria-expanded="${this.#preview}">${t.preview}</button><div id="letter-preview" class="preview-content" data-open="${this.#preview}"><div class="preview"><h2>${esc(this.#data.subject || t.application)}</h2><p>${esc(this.#data.recipientName)}</p><div class="body">${esc(this.#data.body || t.empty)}</div></div></div><div class="actions"><button type="button" data-copy-text ${locked || !this.#data.body ? "disabled" : ""}>${t.copy}</button>${["pdf", "docx"].map((f) => `<button type="button" data-key="export-${f}" data-export="${f}" ${locked || !this.#services || !this.#ready() ? "disabled" : ""}>${f.toUpperCase()} \u2193</button>`).join("")}</div><div class="actions">${mail.href && !locked ? `<a class="button primary" data-mailto href="${esc(mail.href)}">${t.mail} \u2197</a>` : `<button type="button" disabled>${t.mail}</button>`}</div><p class="muted">${t.mailHint}</p>${mail.long ? `<p class="notice" data-mail-long>${t.mailLong}</p>` : ""}${!this.#services ? `<p class="notice">${t.noService}</p>` : ""}${this.#message ? `<p class="notice ${this.#error ? "error" : "success"}" role="${this.#error ? "alert" : "status"}">${esc(this.#message)}</p>` : ""}</aside></div></section>`);
+    const input = (key, extra = "") => `<label>${t[key]}<input data-key="${key}" data-field="${key}" value="${esc(this.#data[key])}" maxlength="1000" ${key === "profession" && this.#professions.length ? 'list="occupation-suggestions"' : ""} ${extra}></label>`;
+    this.paint(`<style>.letter-grid{display:grid;grid-template-columns:${this.#presentation === "editor" ? "minmax(0,1fr)" : "minmax(0,1.1fr) minmax(0,.9fr)"};gap:22px}fieldset{padding:0;border:0;margin:0;min-width:0}.preview-toggle{display:none}.letter-preview[hidden]{display:none}.letter-preview{align-self:start;position:sticky;top:16px}@media(max-width:800px){.letter-grid{grid-template-columns:1fr}.letter-preview{position:static}.preview-toggle{display:flex;width:100%;margin-bottom:12px}.preview-content[data-open=false]{display:none}}</style><section lang="${this.language}"><h1>${t.title}</h1><p>${t.intro}</p>${this.#documentLanguage && this.#documentLanguage !== this.language ? `<p class="notice" data-document-language>${{ de: "Die Bewerbung wird auf Deutsch vorbereitet. Pr\xFCfe deine eigenen Texte.", en: "Your application template is in German. Review your own text before sending.", fr: "Le mod\xE8le de candidature est en allemand. Relis tes propres textes avant l\u2019envoi.", ru: "\u0428\u0430\u0431\u043B\u043E\u043D \u0437\u0430\u044F\u0432\u043B\u0435\u043D\u0438\u044F \u2014 \u043D\u0430 \u043D\u0435\u043C\u0435\u0446\u043A\u043E\u043C. \u041F\u0440\u043E\u0432\u0435\u0440\u044C \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442 \u043F\u0435\u0440\u0435\u0434 \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u043E\u0439." }[this.language]}</p>` : ""}${this.#review ? `<p class="notice">${t.check}</p>` : ""}<div class="letter-grid"><div><form><fieldset ${disabled}><div class="grid">${input("profession", "required")}<datalist id="occupation-suggestions">${this.#professions.map((x) => `<option value="${esc(x.value)}">${esc(x.label)}</option>`).join("")}</datalist>${input("startingDate")}</div>${!this.#cvName() ? input("senderName", "required") : ""}<div class="grid">${input("recipientName")}${input("recipientEmail", 'type="email"')}</div>${this.#company?.emailStatus === "legacy-inferred" ? `<p class="notice">${t.inferred}</p>` : ""}<div class="actions" style="margin-bottom:18px"><button type="button" class="primary" data-key="template" data-template ${!this.#sender() || !this.#data.profession.trim() ? "disabled" : ""}>${t.template}</button>${this.#undo ? `<button type="button" data-undo>${t.undo}</button>` : ""}</div>${input("subject", "required")}<label>${t.body}<textarea data-key="body" data-field="body" style="min-height:320px" maxlength="30000" required>${esc(this.#data.body)}</textarea></label></fieldset></form>${this.#presentation === "editor" && this.#message ? `<p class="notice ${this.#error ? "error" : "success"}" role="${this.#error ? "alert" : "status"}">${esc(this.#message)}</p>` : ""}</div><aside class="card letter-preview" ${this.#presentation === "editor" ? "hidden" : ""}><button type="button" class="preview-toggle" data-preview aria-controls="letter-preview" aria-expanded="${this.#preview}">${t.preview}</button><div id="letter-preview" class="preview-content" data-open="${this.#preview}"><div class="preview"><h2>${esc(this.#data.subject || t.application)}</h2><p>${esc(this.#data.recipientName)}</p><div class="body">${esc(this.#data.body || t.empty)}</div></div></div><div class="actions"><button type="button" data-copy-text ${locked || !this.#data.body ? "disabled" : ""}>${t.copy}</button>${["pdf", "docx"].map((f) => `<button type="button" data-key="export-${f}" data-export="${f}" ${locked || !this.#services || !this.#ready() ? "disabled" : ""}>${f.toUpperCase()} \u2193</button>`).join("")}</div><div class="actions">${mail.href && !locked ? `<a class="button primary" data-mailto href="${esc(mail.href)}">${t.mail} \u2197</a>` : `<button type="button" disabled>${t.mail}</button>`}</div><p class="muted">${t.mailHint}</p>${mail.long ? `<p class="notice" data-mail-long>${t.mailLong}</p>` : ""}${!this.#services ? `<p class="notice">${t.noService}</p>` : ""}${this.#message ? `<p class="notice ${this.#error ? "error" : "success"}" role="${this.#error ? "alert" : "status"}">${esc(this.#message)}</p>` : ""}</aside></div></section>`);
   }
 };
 if (!customElements.get("azr-letter-editor")) customElements.define("azr-letter-editor", AzrLetterEditor);

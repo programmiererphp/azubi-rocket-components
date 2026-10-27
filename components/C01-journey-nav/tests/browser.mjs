@@ -177,13 +177,14 @@ try {
     assert.match(await page.locator('#copy-status').innerText(),/Kopiert|Kopieren nicht verfügbar/);
     await page.click('#reset');assert.equal((await inspect()).current,'1');assert.equal(await page.locator('#log').innerText(),'Noch keine Navigation.');
   });
+  await test('Compact navigation keeps all six labels and supports hiding duplicate controls',async()=>{await nav.evaluate(el=>{el.compact=true;el.showControls=false;});for(const width of [1440,390,320]){await page.setViewportSize({width,height:900});assert.equal(await nav.locator('.step').count(),6);assert.equal(await nav.locator('footer').count(),0);const r=await nav.evaluate(el=>{const a=[...el.shadowRoot.querySelectorAll('.step')].map(n=>n.getBoundingClientRect());return {height:el.getBoundingClientRect().height,rows:new Set(a.map(b=>Math.round(b.top))).size};});assert.ok(r.height<260,JSON.stringify({width,...r}));assert.equal(r.rows,width>640?1:2);}await nav.evaluate(el=>{el.compact=false;el.showControls=true;});});
   await test('No external service requests, failed requests or relevant browser errors',async()=>{
     assert.deepEqual(failedRequests,[]);assert.deepEqual(errors,[]);
     assert.ok(requests.every(url=>new URL(url).origin===new URL(base).origin));
   });
 } catch(error){failure=error;}
 finally {
-  const report={component:'C01',version:'0.1.0',passed:!failure,recorded_at_utc:new Date().toISOString(),url:demo,
+  const report={component:'C01',version:'0.2.0',artifact_sha256:JSON.parse(await readFile(resolve(root,'manifest.json'),'utf8')).entrypoints.sha256,passed:!failure,recorded_at_utc:new Date().toISOString(),url:demo,
     browser:'Chromium / Playwright',browser_plugin:'not available',fallback_reason:'Browser plugin not available',
     viewports:[{width:1440,height:900},{width:390,height:844},{width:320,height:844}],
     test_count:results.length,passed_count:results.filter(r=>r.passed).length,results,console_errors:errors,failed_requests:failedRequests,

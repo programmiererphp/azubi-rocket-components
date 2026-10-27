@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 const base = new URL('./', import.meta.url);
 const locales = await readFile(new URL('src/locales.js', base), 'utf8');
 const main = await readFile(new URL('src/index.js', base), 'utf8');
-const output = '// Azubi Rocket C01 v0.1.0 — deterministic standalone ESM\n' + locales + '\n' +
+const output = '// Azubi Rocket C01 v0.2.0 — deterministic standalone ESM\n' + locales + '\n' +
   main.replace("import { LOCALES } from './locales.js';\n", '');
 await mkdir(new URL('dist/', base), { recursive: true });
 await writeFile(new URL('dist/index.js', base), output);
