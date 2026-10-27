@@ -1,9 +1,10 @@
 {
   "component": "C01",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "artifact_sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1",
   "passed": true,
-  "recorded_at_utc": "2026-10-21T15:07:38.237Z",
-  "url": "http://127.0.0.1:45161/demo/index.html",
+  "recorded_at_utc": "2026-10-27T16:37:13.354Z",
+  "url": "http://127.0.0.1:33003/demo/index.html",
   "browser": "Chromium / Playwright",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available",
@@ -21,8 +22,8 @@
       "height": 844
     }
   ],
-  "test_count": 85,
-  "passed_count": 85,
+  "test_count": 86,
+  "passed_count": 86,
   "results": [
     {
       "name": "Page identity, meaningful content and no error overlay",
@@ -358,6 +359,10 @@
     },
     {
       "name": "Demo copy log and reset controls work",
+      "passed": true
+    },
+    {
+      "name": "Compact navigation keeps all six labels and supports hiding duplicate controls",
       "passed": true
     },
     {
