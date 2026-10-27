@@ -1,10 +1,10 @@
 {
   "component": "C04",
-  "version": "0.1.0",
-  "artifact_sha256": "4d408926ffbe6b3c85073396bd34f64c02919e17cce4e3582bb4fa878cd5930e",
+  "version": "0.1.1",
+  "artifact_sha256": "0b98f300806bbf87918b57dfc25ae4d74e09b5ed385ceddc04c353250ea054d6",
   "passed": true,
   "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C04-company-finder/demo/index.html",
-  "recorded_at_utc": "2026-10-21T16:27:13.744Z",
+  "recorded_at_utc": "2026-10-27T16:37:11.548Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
