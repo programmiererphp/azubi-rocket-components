@@ -1,0 +1,27 @@
+{
+  "reachable_anonymously": true,
+  "sha256": "a98aec63e0565711c20963673252c42763e1f1cb277cb2950b178eeff02fe5ae",
+  "commit_sha": "064dc7f8c0fdd6195323ee3646ed515d2d3ddfbb",
+  "recorded_at_utc": "2026-10-27T17:09:04.794750+00:00",
+  "method": "Anonymous default-TLS HTTPS without Authorization/cookies, exact source, Pages and demo service bytes",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/064dc7f8c0fdd6195323ee3646ed515d2d3ddfbb/services/application-files/dist/index.js",
+      "status": 200,
+      "bytes": 538413,
+      "sha256": "a98aec63e0565711c20963673252c42763e1f1cb277cb2950b178eeff02fe5ae"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/services/application-files/dist/index.js",
+      "status": 200,
+      "bytes": 538413,
+      "sha256": "a98aec63e0565711c20963673252c42763e1f1cb277cb2950b178eeff02fe5ae"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C12-application-pack/demo/vendor/application-files.js",
+      "status": 200,
+      "bytes": 538413,
+      "sha256": "a98aec63e0565711c20963673252c42763e1f1cb277cb2950b178eeff02fe5ae"
+    }
+  ]
+}
