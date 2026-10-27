@@ -161,6 +161,18 @@
         "AZR-DETAIL-01..05"
       ],
       "dependencies": []
+    },
+    {
+      "id": "C12",
+      "name": "application-pack",
+      "tag": "azr-application-pack",
+      "path": "components/C12-application-pack/manifest.json",
+      "version": "0.1.0",
+      "status": "BROWSER_VERIFICATION_PENDING",
+      "evidence_refs": [
+        "AZR-AUDIT-01"
+      ],
+      "dependencies": []
     }
   ],
   "shell": {

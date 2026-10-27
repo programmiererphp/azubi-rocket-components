@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths: ['scripts/verify-public-downloads.py', '.github/workflows/public-download-proof.yml']
   workflow_run:
-    workflows: ['C01 isolated and published browser tests','C02 isolated and published browser tests','C03 isolated and published browser tests','C04 isolated and published browser tests','C05 isolated and published browser tests','C06 isolated and published browser tests','C07 isolated and published browser tests','C08 isolated and published browser tests','C09 isolated and published browser tests','C10 isolated and published browser tests','C11 isolated and published browser tests']
+    workflows: ['C01 isolated and published browser tests','C02 isolated and published browser tests','C03 isolated and published browser tests','C04 isolated and published browser tests','C05 isolated and published browser tests','C06 isolated and published browser tests','C07 isolated and published browser tests','C08 isolated and published browser tests','C09 isolated and published browser tests','C10 isolated and published browser tests','C11 isolated and published browser tests','C12 isolated and published browser tests']
     types: [completed]
   workflow_dispatch:
 permissions:
@@ -30,3 +30,4 @@ jobs:
           git diff --cached --quiet || git commit -m 'Record anonymous exact public artifact downloads [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
+

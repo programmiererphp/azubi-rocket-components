@@ -1,0 +1,5 @@
+import{readFile,writeFile,mkdir}from'node:fs/promises';import{createHash}from'node:crypto';import{pathToFileURL}from'node:url';
+const esbuild=process.env.ESBUILD_MODULE?await import(pathToFileURL(process.env.ESBUILD_MODULE).href):await import('esbuild');
+const root=new URL('./',import.meta.url);await mkdir(new URL('dist/',root),{recursive:true});
+await esbuild.build({absWorkingDir:root.pathname,entryPoints:['src/index.js'],outfile:'dist/index.js',bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof'});
+const bytes=await readFile(new URL('dist/index.js',root));const manifest={schema_version:'1.0',service_id:'application-files',version:'0.1.0',entrypoint:'dist/index.js',sha256:createHash('sha256').update(bytes).digest('hex'),network_requests:false,dependencies:{'pdf-lib':'1.17.1',jszip:'3.10.1'},exports:['mergeCertificates','companyCsv','emailDraft','prepareApplication']};await writeFile(new URL('manifest.json',root),JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({bytes:bytes.length,sha256:manifest.sha256}));

@@ -1,0 +1,17 @@
+{
+  "name": "@azubi-rocket/application-files",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "jszip": "3.10.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

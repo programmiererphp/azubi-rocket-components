@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "component_id": "C12",
+  "custom_element": "azr-application-pack",
+  "version": "0.1.0",
+  "public_github_repo": "programmiererphp/azubi-rocket-components",
+  "public_anonymous_fetch_verified": false,
+  "entrypoints": {
+    "esm": "dist/index.js",
+    "sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1"
+  },
+  "input_attributes": [
+    {
+      "name": "language",
+      "values": [
+        "de",
+        "en",
+        "fr",
+        "ru"
+      ],
+      "default": "de"
+    },
+    {
+      "name": "busy",
+      "type": "boolean attribute"
+    }
+  ],
+  "input_properties": [
+    {
+      "name": "request",
+      "schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "cvReady",
+          "missing",
+          "company",
+          "letter",
+          "companies"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "cvReady": {
+            "type": "boolean"
+          },
+          "missing": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "string",
+              "maxLength": 300
+            }
+          },
+          "company": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "letter": {
+            "type": "object",
+            "required": [
+              "subject",
+              "body"
+            ],
+            "properties": {
+              "subject": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "body": {
+                "type": "string",
+                "maxLength": 30000
+              }
+            }
+          },
+          "companies": {
+            "type": "array",
+            "maxItems": 5000
+          }
+        }
+      }
+    },
+    {
+      "name": "services",
+      "schema": {
+        "type": [
+          "object",
+          "null"
+        ]
+      },
+      "description": "prepareApplication(request)->Promise<real PDF/MIME/ZIP results>; optional loadFiles/saveFiles local storage ports."
+    }
+  ],
+  "events": [
+    {
+      "name": "azr:application-change",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "recipientEmail",
+          "addressReviewed",
+          "germanReviewed",
+          "allowNoCertificates",
+          "files"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "recipientEmail": {
+            "type": "string"
+          },
+          "addressReviewed": {
+            "type": "boolean"
+          },
+          "germanReviewed": {
+            "type": "boolean"
+          },
+          "allowNoCertificates": {
+            "type": "boolean"
+          },
+          "files": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    {
+      "name": "azr:application-status",
+      "bubbles": true,
+      "composed": true,
+      "detail_schema": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "operation",
+          "status"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "operation": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "ready",
+              "error",
+              "download-requested",
+              "email-open-requested",
+              "handed-off"
+            ]
+          },
+          "errorCode": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "component_dependencies": [],
+  "services": [
+    {
+      "id": "document-exporter",
+      "version": "0.1.0",
+      "sha256": "d5b0960fae287b21afc56f370400a20261e8a6f0859a148e960d537caf3234a9"
+    },
+    {
+      "id": "application-files",
+      "version": "0.1.0",
+      "sha256": "a98aec63e0565711c20963673252c42763e1f1cb277cb2950b178eeff02fe5ae"
+    }
+  ],
+  "runtime_budget": {
+    "esm_max_bytes": 120000,
+    "no_component_imports": true
+  },
+  "languages": [
+    "de",
+    "en",
+    "fr",
+    "ru"
+  ],
+  "rights": "New MIT implementation; all public demo data are fictitious."
+}
