@@ -1,24 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/064dc7f8c0fdd6195323ee3646ed515d2d3ddfbb/components/C12-application-pack/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/d487b0af6b692727900e42429cd81da080b1c2da/components/C12-application-pack/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1",
-  "bytes": 51807,
-  "commit_sha": "064dc7f8c0fdd6195323ee3646ed515d2d3ddfbb",
-  "recorded_at_utc": "2026-10-27T17:09:03.888651+00:00",
+  "sha256": "08b7e56eb968609f5b61b48edebb12597d910c82609ac3f117fce0dbf460f6ee",
+  "bytes": 51869,
+  "commit_sha": "d487b0af6b692727900e42429cd81da080b1c2da",
+  "recorded_at_utc": "2026-10-27T17:17:55.964539+00:00",
   "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
   "checks": [
     {
-      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/064dc7f8c0fdd6195323ee3646ed515d2d3ddfbb/components/C12-application-pack/dist/index.js",
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/d487b0af6b692727900e42429cd81da080b1c2da/components/C12-application-pack/dist/index.js",
       "status": 200,
-      "bytes": 51807,
-      "sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1"
+      "bytes": 51869,
+      "sha256": "08b7e56eb968609f5b61b48edebb12597d910c82609ac3f117fce0dbf460f6ee"
     },
     {
       "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C12-application-pack/dist/index.js",
       "status": 200,
-      "bytes": 51807,
-      "sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1"
+      "bytes": 51869,
+      "sha256": "08b7e56eb968609f5b61b48edebb12597d910c82609ac3f117fce0dbf460f6ee"
     }
   ]
 }
