@@ -1,10 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/2711a326df4e089d789b7b864c4c28e33181b46e/components/C01-journey-nav/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/658f61ca96eb293c0f4b3845a4e53c3b48280513/components/C01-journey-nav/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "bytes": 11642,
-  "sha256": "a54fdf23ee3ad772567c35da5a6478c3bb4063fbe75bc19bce6dddb574120d1c",
-  "recorded_at_utc": "2026-10-21T15:02:44.640273+00:00",
-  "method": "Python urllib GET without Authorization, cookies or credentials",
-  "commit_sha": "2711a326df4e089d789b7b864c4c28e33181b46e"
+  "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1",
+  "bytes": 12699,
+  "commit_sha": "658f61ca96eb293c0f4b3845a4e53c3b48280513",
+  "recorded_at_utc": "2026-10-27T16:37:29.719994+00:00",
+  "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/658f61ca96eb293c0f4b3845a4e53c3b48280513/components/C01-journey-nav/dist/index.js",
+      "status": 200,
+      "bytes": 12699,
+      "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C01-journey-nav/dist/index.js",
+      "status": 200,
+      "bytes": 12699,
+      "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1"
+    }
+  ]
 }

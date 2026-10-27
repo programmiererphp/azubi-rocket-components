@@ -1,10 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/005ed694dfb15e4f7380ebb953ad6cbf19e860ac/components/C04-company-finder/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/658f61ca96eb293c0f4b3845a4e53c3b48280513/components/C04-company-finder/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "sha256": "4d408926ffbe6b3c85073396bd34f64c02919e17cce4e3582bb4fa878cd5930e",
-  "bytes": 20335,
-  "commit_sha": "005ed694dfb15e4f7380ebb953ad6cbf19e860ac",
-  "recorded_at_utc": "2026-10-21T16:28:41.664682+00:00",
-  "method": "urllib GET without Authorization/cookies; published demo separately browser-tested"
+  "sha256": "0b98f300806bbf87918b57dfc25ae4d74e09b5ed385ceddc04c353250ea054d6",
+  "bytes": 20392,
+  "commit_sha": "658f61ca96eb293c0f4b3845a4e53c3b48280513",
+  "recorded_at_utc": "2026-10-27T16:37:29.884524+00:00",
+  "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/658f61ca96eb293c0f4b3845a4e53c3b48280513/components/C04-company-finder/dist/index.js",
+      "status": 200,
+      "bytes": 20392,
+      "sha256": "0b98f300806bbf87918b57dfc25ae4d74e09b5ed385ceddc04c353250ea054d6"
+    },
+    {
+      "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C04-company-finder/dist/index.js",
+      "status": 200,
+      "bytes": 20392,
+      "sha256": "0b98f300806bbf87918b57dfc25ae4d74e09b5ed385ceddc04c353250ea054d6"
+    }
+  ]
 }
