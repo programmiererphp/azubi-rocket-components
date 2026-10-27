@@ -1,0 +1,135 @@
+{
+  "component": "C12",
+  "version": "0.1.0",
+  "artifact_sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1",
+  "passed": true,
+  "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C12-application-pack/demo/index.html",
+  "recorded_at_utc": "2026-10-27T17:08:45.939Z",
+  "browser": "151.0.7922.34",
+  "browser_plugin": "not available",
+  "fallback_reason": "Browser plugin not available; isolated regular Playwright",
+  "test_count": 26,
+  "passed_count": 26,
+  "results": [
+    {
+      "name": "Identity, meaningful component and exact artifact hash",
+      "passed": true
+    },
+    {
+      "name": "Exact shared service bundles and disabled incomplete application",
+      "passed": true
+    },
+    {
+      "name": "Actual PDF and PNG upload retains visible order and enables preparation only after reviews",
+      "passed": true
+    },
+    {
+      "name": "Real package creates German CV, combined4page certificates, MIME, ZIP and company CSV",
+      "passed": true
+    },
+    {
+      "name": "Independent PDF, email MIME and ZIP parsers verify actual contents and attachment bytes",
+      "passed": true
+    },
+    {
+      "name": "Changing recipient invalidates stale files and review, while preserving selected certificates",
+      "passed": true
+    },
+    {
+      "name": "Reordering and removing files changes the actual next certificate PDF",
+      "passed": true
+    },
+    {
+      "name": "Invalid, empty, excessive and oversized additions retain prior accepted files",
+      "passed": true
+    },
+    {
+      "name": "Corrupt and encrypted documents show recoverable localized errors without fake success",
+      "passed": true
+    },
+    {
+      "name": "Reconnection retains files and does not duplicate change events",
+      "passed": true
+    },
+    {
+      "name": "Unsupported sharing keeps download workflow and cancelled native sharing loses no outputs",
+      "passed": true
+    },
+    {
+      "name": "1440px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px de renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px en renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px fr renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320px ru renders without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Missing service and missing CV/letter/company block preparation honestly",
+      "passed": true
+    },
+    {
+      "name": "Defensive copies, malformed inputs and escaped data prevent injection",
+      "passed": true
+    },
+    {
+      "name": "Healthy app console and network",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 844
+    }
+  ]
+}
