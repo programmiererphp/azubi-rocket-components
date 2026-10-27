@@ -1,15 +1,15 @@
 {
   "component": "C05",
-  "version": "0.1.0",
-  "artifact_sha256": "3ea046c96abe318af0651dfb76f113df350eddaa515e8ebf36dc6191e35afdbc",
+  "version": "0.2.0",
+  "artifact_sha256": "eed0a4850a4c0661401a3b233f041eea395188fc5195753138d510604b46984e",
   "passed": true,
-  "url": "http://127.0.0.1:44597/demo/index.html",
-  "recorded_at_utc": "2026-10-21T16:47:53.004Z",
+  "url": "http://127.0.0.1:43107/demo/index.html",
+  "recorded_at_utc": "2026-10-27T16:44:48.034Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
-  "test_count": 33,
-  "passed_count": 33,
+  "test_count": 34,
+  "passed_count": 34,
   "results": [
     {
       "name": "Identity, meaningful component and exact artifact hash",
@@ -105,6 +105,10 @@
     },
     {
       "name": "Missing exporter/busy disable unavailable operations",
+      "passed": true
+    },
+    {
+      "name": "French UI German template, controlled recipient rehydration and focused editor presentation",
       "passed": true
     },
     {
