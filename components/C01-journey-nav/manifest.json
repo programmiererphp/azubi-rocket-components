@@ -4,7 +4,7 @@
   "custom_element": "azr-journey-nav",
   "version": "0.2.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1"

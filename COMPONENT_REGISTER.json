@@ -13,12 +13,14 @@
       "name": "journey-nav",
       "tag": "azr-journey-nav",
       "path": "components/C01-journey-nav/manifest.json",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "status": "GITHUB_VERIFIED",
-      "git_commit_sha": "2711a326df4e089d789b7b864c4c28e33181b46e",
+      "git_commit_sha": "6a88636d63840868f19b3693b5fff7144975fe7c",
       "evidence_refs": [
-        "AZR-MASTER-FLOW-03",
-        "AZR-DETAIL-01..05"
+        "evidence/test-results.json",
+        "evidence/published-test-results.json",
+        "evidence/public-download.json",
+        "AZR-AUDIT-01"
       ],
       "dependencies": []
     },
@@ -41,12 +43,14 @@
       "name": "cv-editor",
       "tag": "azr-cv-editor",
       "path": "components/C03-cv-editor/manifest.json",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "status": "GITHUB_VERIFIED",
-      "git_commit_sha": "28baed1c7ca9bbba4b85eeedd82e5abb61899ecb",
+      "git_commit_sha": "6a88636d63840868f19b3693b5fff7144975fe7c",
       "evidence_refs": [
-        "AZR-MASTER-FLOW-03",
-        "AZR-DETAIL-01..05"
+        "evidence/test-results.json",
+        "evidence/published-test-results.json",
+        "evidence/public-download.json",
+        "AZR-AUDIT-01"
       ],
       "dependencies": []
     },
@@ -55,12 +59,14 @@
       "name": "company-finder",
       "tag": "azr-company-finder",
       "path": "components/C04-company-finder/manifest.json",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "status": "GITHUB_VERIFIED",
-      "git_commit_sha": "005ed694dfb15e4f7380ebb953ad6cbf19e860ac",
+      "git_commit_sha": "6a88636d63840868f19b3693b5fff7144975fe7c",
       "evidence_refs": [
-        "AZR-MASTER-FLOW-03",
-        "AZR-DETAIL-01..05"
+        "evidence/test-results.json",
+        "evidence/published-test-results.json",
+        "evidence/public-download.json",
+        "AZR-AUDIT-01"
       ],
       "dependencies": []
     },
@@ -69,12 +75,14 @@
       "name": "letter-editor",
       "tag": "azr-letter-editor",
       "path": "components/C05-letter-editor/manifest.json",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "status": "GITHUB_VERIFIED",
-      "git_commit_sha": "b6f25f1b632da8c10822c0a7e67890b08f379493",
+      "git_commit_sha": "6a88636d63840868f19b3693b5fff7144975fe7c",
       "evidence_refs": [
-        "AZR-MASTER-FLOW-03",
-        "AZR-DETAIL-01..05"
+        "evidence/test-results.json",
+        "evidence/published-test-results.json",
+        "evidence/public-download.json",
+        "AZR-AUDIT-01"
       ],
       "dependencies": []
     },

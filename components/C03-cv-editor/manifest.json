@@ -4,7 +4,7 @@
   "custom_element": "azr-cv-editor",
   "version": "0.2.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7"

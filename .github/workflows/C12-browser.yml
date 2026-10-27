@@ -45,7 +45,7 @@ jobs:
           cmp dist/index.js ../../components/C12-application-pack/demo/vendor/application-files.js
       - name: Install Chromium
         working-directory: components/C12-application-pack
-        run: npx playwright install --with-deps chromium --only-shell
+        run: npx playwright install chromium --only-shell
       - name: Deterministic build
         working-directory: components/C12-application-pack
         run: |
