@@ -46,5 +46,6 @@ jobs:
             for path in sorted(root.rglob('*')):
               if path.is_file() and not any(x in path.parts for x in ['node_modules','.git']): archive.write(path,path.relative_to(root.parent))
           PY
-            gh release create "$component_tag" "/tmp/component-packages/${component_tag}.zip" --target "$component_commit" --title "$component_id v$component_version" --notes-file "$component_folder/README.md"
+            gh release create "$component_tag" "/tmp/component-packages/${component_tag}.zip" --target "$GITHUB_SHA" --title "$component_id v$component_version" --notes-file "$component_folder/README.md"
           done < /tmp/verified-components.tsv
+

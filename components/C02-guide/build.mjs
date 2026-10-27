@@ -8,3 +8,4 @@ await esbuild.build({absWorkingDir:base.pathname,entryPoints:['src/index.js'],ou
 const path=new URL('manifest.json',base),manifest=JSON.parse(await readFile(path,'utf8'));
 const bytes=await readFile(new URL('dist/index.js',base));manifest.entrypoints.sha256=createHash('sha256').update(bytes).digest('hex');
 await writeFile(path,JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({id:manifest.component_id,bytes:bytes.length,sha256:manifest.entrypoints.sha256}));
+

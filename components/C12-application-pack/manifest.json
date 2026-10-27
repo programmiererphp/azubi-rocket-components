@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C12",
   "custom_element": "azr-application-pack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
   "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "4a64cb3c9de455e3d97ec1d8fb3b1d7aa931aeb246c689b728d4a8e0fdfa4be1"
+    "sha256": "08b7e56eb968609f5b61b48edebb12597d910c82609ac3f117fce0dbf460f6ee"
   },
   "input_attributes": [
     {

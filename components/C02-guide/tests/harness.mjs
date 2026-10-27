@@ -24,3 +24,4 @@ export async function suite(url,checks){
 export async function screenshotChecks({page,test,root,manifest},setup=async()=>{}){
  for(const w of [1440,390,320]){await page.setViewportSize({width:w,height:w===1440?900:844});for(const lang of ['de','en','fr','ru']){await test(`${w}px ${lang} renders without horizontal overflow`,async()=>{await page.selectOption('#language',lang);await setup(lang);const component=page.locator(manifest.custom_element);assert.ok(await component.isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.equal(await component.evaluate(el=>el.shadowRoot.querySelector('script,iframe')),null);});}if(w!==320){await page.selectOption('#language','de');await setup('de');await page.screenshot({path:resolve(root,'evidence',w===1440?'desktop.png':'mobile.png'),fullPage:false});}}
 }
+

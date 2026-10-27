@@ -41,7 +41,7 @@ export class AzrApplicationPack extends ElementBase{
  #shareFiles(){return this.#result?.attachments.map(a=>new File([a.blob],a.filename,{type:'application/pdf'}))??[];}
  #canShare(){try{const files=this.#shareFiles();return Boolean(files.length&&navigator.canShare?.({files})&&navigator.share);}catch{return false;}}
  async #share(){if(!this.#canShare())return;try{await navigator.share({files:this.#shareFiles(),title:this.#result.subject,text:this.#result.body});this.#message=words[this.language].notSent;emit(this,'azr:application-status',{operation:'share',status:'handed-off'});}catch(error){this.#message=words[this.language][error.name==='AbortError'?'cancelled':'shareFailed'];}this.render();}
- handle(event){const el=event.target.closest('input,button,a');if(!el)return;if(this.busy||this.#working){if(el.matches('a'))event.preventDefault();return;}
+ handle(event){const el=event.target.closest('input,button,a');if(!el)return;if(this.busy||this.#working||this.#storage==='loading'){if(el.matches('a'))event.preventDefault();return;}
   if(event.type==='input'&&el.dataset.recipient!==undefined){this.#recipient=el.value;this.#addressReviewed=false;this.#invalidate();this.#notify();this.render();}
   if(event.type==='change'&&el.dataset.files!==undefined){const selected=Array.from(el.files);el.value='';this.#filesChanged([...this.#files,...selected]);}
   if(event.type==='change'&&el.dataset.skip!==undefined){this.#skip=el.checked;this.#invalidate();this.#notify();this.render();}
@@ -52,7 +52,7 @@ export class AzrApplicationPack extends ElementBase{
   if(el.dataset.prepare!==undefined)this.#prepare();if(el.dataset.copy!==undefined)this.#copy();if(el.dataset.share!==undefined)this.#share();
   if(el.dataset.output)emit(this,'azr:application-status',{operation:el.dataset.output,status:el.dataset.output==='mailto'?'email-open-requested':'download-requested'});
  }
- render(){const t=words[this.language],r=this.#request,locked=this.busy||this.#working,disabled=locked?'disabled':'',unit={de:'MB',en:'MB',fr:'Mo',ru:'МБ'}[this.language],size=bytes=>bytes<1048576?`${new Intl.NumberFormat(this.language,{maximumFractionDigits:0}).format(Math.max(1,Math.ceil(bytes/1024)))} kB`:`${new Intl.NumberFormat(this.language,{maximumFractionDigits:1}).format(bytes/1048576)} ${unit}`;
+ render(){const t=words[this.language],r=this.#request,locked=this.busy||this.#working||this.#storage==='loading',disabled=locked?'disabled':'',unit={de:'MB',en:'MB',fr:'Mo',ru:'МБ'}[this.language],size=bytes=>bytes<1048576?`${new Intl.NumberFormat(this.language,{maximumFractionDigits:0}).format(Math.max(1,Math.ceil(bytes/1024)))} kB`:`${new Intl.NumberFormat(this.language,{maximumFractionDigits:1}).format(bytes/1048576)} ${unit}`;
   const missing=r?[...r.missing,...(!r.company?[t.choose]:[]),...(!r.letter.subject.trim()||!r.letter.body.trim()?[t.letter]:[])]:[t.cv,t.letter,t.choose];
   const site=website(r?.company?.website),result=this.#result,output=(file,label,kind,primary=false)=>`<a class="button ${primary?'primary':''}" data-output="${kind}" href="${esc(this.#url(file.blob))}" download="${esc(file.filename)}">${esc(label)}</a>`;
   const stages={cv:t.cvStage,certificates:t.certStage,package:t.packStage};const pct=Math.round((this.#progress.stage==='cv'?0:this.#progress.stage==='certificates'?30:80)+(this.#progress.stage==='cv'?25:this.#progress.stage==='certificates'?45:20)*Math.max(0,Math.min(1,this.#progress.done/Math.max(1,this.#progress.total))));

@@ -20,3 +20,4 @@ export class ElementBase extends HTMLElement {
   disconnectedCallback(){this.#controller?.abort();}
   paint(html){if(!this.isConnected)return;const a=this.shadowRoot.activeElement,key=a?.dataset.key;let selection;try{selection=[a.selectionStart,a.selectionEnd];}catch{}this.shadowRoot.innerHTML=`<style>${theme}</style>${html}`;if(key){const b=[...this.shadowRoot.querySelectorAll('[data-key]')].find(n=>n.dataset.key===key);if(b&&!b.disabled){b.focus({preventScroll:true});try{b.setSelectionRange(...selection);}catch{}}}}
 }
+

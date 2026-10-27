@@ -8,3 +8,4 @@ guide.addEventListener('azr:guide-change',e=>{journey=e.detail.journey;record(e)
 guide.addEventListener('azr:route-request',e=>{if(available.includes(e.detail.toStep)){step=e.detail.toStep;record(e);show();}});
 nav.addEventListener('azr:navigate',e=>{step=e.detail.toStep;record(e);show();});language.addEventListener('change',show);
 document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(log.textContent);document.querySelector('#copy-status').textContent='Kopiert.';}catch{document.querySelector('#copy-status').textContent='Bitte Log markieren und kopieren.';}});show();
+

@@ -318,7 +318,7 @@ var AzrApplicationPack = class extends ElementBase {
   handle(event) {
     const el = event.target.closest("input,button,a");
     if (!el) return;
-    if (this.busy || this.#working) {
+    if (this.busy || this.#working || this.#storage === "loading") {
       if (el.matches("a")) event.preventDefault();
       return;
     }
@@ -366,7 +366,7 @@ var AzrApplicationPack = class extends ElementBase {
     if (el.dataset.output) emit(this, "azr:application-status", { operation: el.dataset.output, status: el.dataset.output === "mailto" ? "email-open-requested" : "download-requested" });
   }
   render() {
-    const t = words[this.language], r = this.#request, locked = this.busy || this.#working, disabled = locked ? "disabled" : "", unit = { de: "MB", en: "MB", fr: "Mo", ru: "\u041C\u0411" }[this.language], size = (bytes) => bytes < 1048576 ? `${new Intl.NumberFormat(this.language, { maximumFractionDigits: 0 }).format(Math.max(1, Math.ceil(bytes / 1024)))} kB` : `${new Intl.NumberFormat(this.language, { maximumFractionDigits: 1 }).format(bytes / 1048576)} ${unit}`;
+    const t = words[this.language], r = this.#request, locked = this.busy || this.#working || this.#storage === "loading", disabled = locked ? "disabled" : "", unit = { de: "MB", en: "MB", fr: "Mo", ru: "\u041C\u0411" }[this.language], size = (bytes) => bytes < 1048576 ? `${new Intl.NumberFormat(this.language, { maximumFractionDigits: 0 }).format(Math.max(1, Math.ceil(bytes / 1024)))} kB` : `${new Intl.NumberFormat(this.language, { maximumFractionDigits: 1 }).format(bytes / 1048576)} ${unit}`;
     const missing = r ? [...r.missing, ...!r.company ? [t.choose] : [], ...!r.letter.subject.trim() || !r.letter.body.trim() ? [t.letter] : []] : [t.cv, t.letter, t.choose];
     const site = website(r?.company?.website), result = this.#result, output = (file, label, kind, primary = false) => `<a class="button ${primary ? "primary" : ""}" data-output="${kind}" href="${esc(this.#url(file.blob))}" download="${esc(file.filename)}">${esc(label)}</a>`;
     const stages = { cv: t.cvStage, certificates: t.certStage, package: t.packStage };

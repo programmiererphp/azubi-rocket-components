@@ -13,6 +13,9 @@ on:
       - '.github/workflows/C12-browser.yml'
       - 'services/application-files/**'
   workflow_dispatch:
+concurrency:
+  group: C12-browser-main
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:

@@ -11,3 +11,4 @@ Native `azr-guide` v0.1.0. Status GITHUB_VERIFIED, noch keine Produktionsumstell
 - Vertrag und Grenzen: manifest.json und /deliveries/D2-C02.md.
 - Kein App-Shell-Import in die Komponente. Synthetische öffentliche Fixtures; private Bestandsinhalte werden später hostseitig eingespeist.
 - Firefox/Safari und die komplette App sind gesonderte Abschlussprüfungen.
+
