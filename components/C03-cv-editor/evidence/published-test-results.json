@@ -1,15 +1,15 @@
 {
   "component": "C03",
-  "version": "0.1.0",
-  "artifact_sha256": "3fcf3baea19d983e89447e5b60d0389cb3de9da37f449f561aced4d352bb732f",
+  "version": "0.2.0",
+  "artifact_sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7",
   "passed": true,
   "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C03-cv-editor/demo/index.html",
-  "recorded_at_utc": "2026-10-21T16:13:26.450Z",
+  "recorded_at_utc": "2026-10-27T17:00:30.170Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
-  "test_count": 33,
-  "passed_count": 33,
+  "test_count": 34,
+  "passed_count": 34,
   "results": [
     {
       "name": "Identity, meaningful component and exact artifact hash",
@@ -133,6 +133,10 @@
     },
     {
       "name": "Duplicate import is safe; reconnect does not duplicate changes",
+      "passed": true
+    },
+    {
+      "name": "French UI can produce and preview German documents without translating own text",
       "passed": true
     },
     {
