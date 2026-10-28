@@ -44,3 +44,5 @@ Sources: https://www.arbeitsagentur.de/en/working-in-germany/vocational-training
 
 Fresh integrated mobile QA found the abroad location choice below the initial 390×844 viewport. D12a additionally versions C02 with optional compact orientation cards and showShortcuts (defaults preserve the existing host contract). The portal uses compact cards and a single preparation action. Investigate and prevent selecting certificates while asynchronous local storage is loading; C12 exposes a disabled file input during that phase, rejects stale jobs and retains actual accepted files. New component versions repeat isolated, published and anonymous exact-hash gates before shell pinning.
 
+
+UI success/error messages must use the selected interface language even when document content uses German. The actual AI Studio walkthrough identified the C05 insertion confirmation as a regression to correct.
