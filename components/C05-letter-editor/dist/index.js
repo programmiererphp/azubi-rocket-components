@@ -275,7 +275,7 @@ var AzrLetterEditor = class extends ElementBase {
     this.#data.subject = fill(template.subject, values);
     this.#data.body = fill(template.body, values);
     this.#review = false;
-    this.#message = t.inserted;
+    this.#message = words[this.language].inserted;
     this.#error = false;
     this.#notify();
   }
