@@ -1,24 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/4be7f73028416e247096580a14bb47445fd76b00/components/C03-cv-editor/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/1122ff11b570ab4486e3fcc549e3cade0ff75dfb/components/C03-cv-editor/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7",
-  "bytes": 29821,
-  "commit_sha": "4be7f73028416e247096580a14bb47445fd76b00",
-  "recorded_at_utc": "2026-10-27T17:01:36.660412+00:00",
+  "sha256": "5ec9ba6fa656f850f52ada91448fe66d01f5ac451e566ce699fe8f2f5d53b394",
+  "bytes": 42928,
+  "commit_sha": "1122ff11b570ab4486e3fcc549e3cade0ff75dfb",
+  "recorded_at_utc": "2026-10-28T12:19:45.053064+00:00",
   "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
   "checks": [
     {
-      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/4be7f73028416e247096580a14bb47445fd76b00/components/C03-cv-editor/dist/index.js",
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/1122ff11b570ab4486e3fcc549e3cade0ff75dfb/components/C03-cv-editor/dist/index.js",
       "status": 200,
-      "bytes": 29821,
-      "sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7"
+      "bytes": 42928,
+      "sha256": "5ec9ba6fa656f850f52ada91448fe66d01f5ac451e566ce699fe8f2f5d53b394"
     },
     {
       "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C03-cv-editor/dist/index.js",
       "status": 200,
-      "bytes": 29821,
-      "sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7"
+      "bytes": 42928,
+      "sha256": "5ec9ba6fa656f850f52ada91448fe66d01f5ac451e566ce699fe8f2f5d53b394"
     }
   ]
 }
