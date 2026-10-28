@@ -1,10 +1,10 @@
 {
   "component": "C03",
-  "version": "0.2.0",
-  "artifact_sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7",
+  "version": "0.3.0",
+  "artifact_sha256": "5ec9ba6fa656f850f52ada91448fe66d01f5ac451e566ce699fe8f2f5d53b394",
   "passed": true,
-  "url": "http://127.0.0.1:36273/demo/index.html",
-  "recorded_at_utc": "2026-10-27T17:00:21.718Z",
+  "url": "http://127.0.0.1:34713/demo/index.html",
+  "recorded_at_utc": "2026-10-28T12:19:31.214Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
@@ -80,7 +80,7 @@
       "passed": true
     },
     {
-      "name": "Mobile preview toggle and accessible keyboard fields work",
+      "name": "Mobile preview remains visible and accessible keyboard fields work",
       "passed": true
     },
     {
