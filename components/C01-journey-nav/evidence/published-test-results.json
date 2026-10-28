@@ -1,9 +1,9 @@
 {
   "component": "C01",
   "version": "0.2.0",
-  "artifact_sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1",
+  "artifact_sha256": "1ebf2ba9be8a207b5d902cb3388af78f5a6279f2d49bb9081eb8eb5ef76b9910",
   "passed": true,
-  "recorded_at_utc": "2026-10-27T17:09:17.935Z",
+  "recorded_at_utc": "2026-10-28T12:19:22.804Z",
   "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C01-journey-nav/demo/index.html",
   "browser": "Chromium / Playwright",
   "browser_plugin": "not available",

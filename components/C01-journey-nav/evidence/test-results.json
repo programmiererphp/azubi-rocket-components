@@ -1,10 +1,10 @@
 {
   "component": "C01",
   "version": "0.2.0",
-  "artifact_sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1",
+  "artifact_sha256": "1ebf2ba9be8a207b5d902cb3388af78f5a6279f2d49bb9081eb8eb5ef76b9910",
   "passed": true,
-  "recorded_at_utc": "2026-10-27T17:09:14.786Z",
-  "url": "http://127.0.0.1:34653/demo/index.html",
+  "recorded_at_utc": "2026-10-28T12:19:19.371Z",
+  "url": "http://127.0.0.1:43131/demo/index.html",
   "browser": "Chromium / Playwright",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available",
