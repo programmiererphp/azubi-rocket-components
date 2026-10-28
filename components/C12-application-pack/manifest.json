@@ -4,7 +4,7 @@
   "custom_element": "azr-application-pack",
   "version": "0.1.1",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "08b7e56eb968609f5b61b48edebb12597d910c82609ac3f117fce0dbf460f6ee"

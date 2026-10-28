@@ -30,11 +30,13 @@
       "tag": "azr-guide",
       "path": "components/C02-guide/manifest.json",
       "version": "0.2.0",
-      "status": "BROWSER_VERIFICATION_PENDING",
-      "git_commit_sha": "d83c829df74039812a87ecc9d8486666fb48ee84",
+      "status": "GITHUB_VERIFIED",
+      "git_commit_sha": "4644a64982bf5763bad9bb96ba079129499a67c7",
       "evidence_refs": [
-        "AZR-MASTER-FLOW-03",
-        "AZR-DETAIL-01..05"
+        "evidence/test-results.json",
+        "evidence/published-test-results.json",
+        "evidence/public-download.json",
+        "AZR-AUDIT-01"
       ],
       "dependencies": []
     },
@@ -176,7 +178,7 @@
       "tag": "azr-application-pack",
       "path": "components/C12-application-pack/manifest.json",
       "version": "0.1.1",
-      "status": "BROWSER_VERIFICATION_PENDING",
+      "status": "GITHUB_VERIFIED",
       "evidence_refs": [
         "evidence/test-results.json",
         "evidence/published-test-results.json",
@@ -184,7 +186,7 @@
         "AZR-AUDIT-01"
       ],
       "dependencies": [],
-      "git_commit_sha": "6a88636d63840868f19b3693b5fff7144975fe7c"
+      "git_commit_sha": "2ff69d38a93d1b2af2302aeef8b04c36ad626563"
     }
   ],
   "shell": {
