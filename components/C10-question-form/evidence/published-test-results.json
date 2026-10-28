@@ -1,10 +1,10 @@
 {
   "component": "C10",
-  "version": "0.1.0",
-  "artifact_sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0",
+  "version": "0.1.1",
+  "artifact_sha256": "eb0800129ed92babdea280ceed26d5d008e289e4d1316a045aa316813f5cd2c6",
   "passed": true,
   "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C10-question-form/demo/index.html",
-  "recorded_at_utc": "2026-10-21T20:53:24.736Z",
+  "recorded_at_utc": "2026-10-28T12:19:30.336Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
