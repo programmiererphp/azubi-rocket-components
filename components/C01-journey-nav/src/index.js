@@ -178,8 +178,8 @@ export class AzrJourneyNav extends HTMLElement {
         data-step="${n}" data-focus="step-${n}" data-step-id="${STEP_IDS[i]}"
         ${current ? 'aria-current="step"' : ''} ${disabled(n) ? 'disabled' : ''}
         aria-label="${n}. ${t.steps[i]}${description ? '. ' + description : ''}">
-        <span class="number" aria-hidden="true">${done && !current ? '✓' : n}</span>
-        <span class="label">${t.steps[i]}</span></button></li>`;
+        <span class="number" aria-hidden="true">${n}</span>
+        <span class="label">${t.steps[i]}${done ? ' <span class="completion" aria-hidden="true">✓</span>' : ''}</span></button></li>`;
     }).join('');
     this.shadowRoot.innerHTML = `<style>${styles}</style>
       <nav class="${this.#compact ? 'compact' : ''}" part="navigation" lang="${this.#language}" aria-label="${t.nav}" aria-busy="${this.#busy}">

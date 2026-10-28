@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C05",
   "custom_element": "azr-letter-editor",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "9e36d950638f170fc70541d3df021ba8a5677e3c4a1cbf35917ea00a92a4462a"
+    "sha256": "9cbb86774429350d8d7f884cfe81ae36ac13a861a4abe29938409745448e5a65"
   },
   "input_attributes": [
     {

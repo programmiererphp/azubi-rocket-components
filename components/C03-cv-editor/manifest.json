@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C03",
   "custom_element": "azr-cv-editor",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "b5a01f8c102890b12f76ee9eb15a1a97c6ab987621dfcd98f0778de51ab06eb7"
+    "sha256": "5ec9ba6fa656f850f52ada91448fe66d01f5ac451e566ce699fe8f2f5d53b394"
   },
   "input_attributes": [
     {
@@ -74,6 +74,19 @@
         ]
       },
       "default": null
+    },
+    {
+      "name": "step",
+      "schema": {
+        "enum": [
+          "personal",
+          "education",
+          "experience",
+          "skills",
+          "review"
+        ]
+      },
+      "default": "personal"
     }
   ],
   "emitted_events": [
@@ -204,6 +217,21 @@
       "name": "DocumentExporter",
       "version": "0.1.0",
       "sha256": "d5b0960fae287b21afc56f370400a20261e8a6f0859a148e960d537caf3234a9"
+    }
+  ],
+  "output_events": [
+    {
+      "name": "azr:cv-step-change",
+      "detail": {
+        "schemaVersion": 1,
+        "step": "personal|education|experience|skills|review"
+      }
+    },
+    {
+      "name": "azr:cv-complete",
+      "detail": {
+        "schemaVersion": 1
+      }
     }
   ]
 }

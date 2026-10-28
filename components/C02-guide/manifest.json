@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C02",
   "custom_element": "azr-guide",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "d69af9deaf225864abae2b2188ee03b352901b850f2faa95f6e092d2bf14a593"
+    "sha256": "f1c062909e130aa2769285e12b4336f25e5ecee1c21eccb09ff97022f5fc254c"
   },
   "input_attributes": [
     {
@@ -58,6 +58,13 @@
         "type": "boolean",
         "default": true
       }
+    },
+    {
+      "name": "guidanceLinks",
+      "schema": {
+        "type": "object"
+      },
+      "default": {}
     }
   ],
   "emitted_events": [

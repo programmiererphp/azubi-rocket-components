@@ -6,3 +6,6 @@ Applicant outcome review: compatible optional host controls and German-document 
 
 ## 0.2.1
 Template insertion confirmation follows the interface language independently of German document content.
+
+## 0.2.2
+User visual review: stable mobile input, explicit navigation and preserved context where applicable. CV adds five guided sections and an always visible preview; preparation supports validated guidance links and preserves open details.

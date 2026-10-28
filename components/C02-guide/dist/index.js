@@ -60,6 +60,7 @@ var ElementBase = class extends HTMLElement {
   }
   paint(html) {
     if (!this.isConnected) return;
+    const opened = [...this.shadowRoot.querySelectorAll("details[open][data-key]")].map((e) => e.dataset.key);
     const a = this.shadowRoot.activeElement, key = a?.dataset.key;
     let selection;
     try {
@@ -67,6 +68,7 @@ var ElementBase = class extends HTMLElement {
     } catch {
     }
     this.shadowRoot.innerHTML = `<style>${theme}</style>${html}`;
+    for (const d of this.shadowRoot.querySelectorAll("details[data-key]")) d.open = opened.includes(d.dataset.key);
     if (key) {
       const b = [...this.shadowRoot.querySelectorAll("[data-key]")].find((n) => n.dataset.key === key);
       if (b && !b.disabled) {
@@ -114,9 +116,21 @@ var AzrGuide = class extends ElementBase {
   #error = null;
   #compact = false;
   #showShortcuts = true;
-  upgradeProperties = ["journey", "content", "availableSteps", "language", "busy", "error", "compact", "showShortcuts"];
+  #links = {};
+  upgradeProperties = ["journey", "content", "availableSteps", "language", "busy", "error", "compact", "showShortcuts", "guidanceLinks"];
   static get observedAttributes() {
     return [...super.observedAttributes, "stage"];
+  }
+  get guidanceLinks() {
+    return copy(this.#links);
+  }
+  set guidanceLinks(value) {
+    if (!value || typeof value !== "object" || Array.isArray(value) || Object.keys(value).length > 200) throw TypeError("Invalid guide links");
+    for (const links of Object.values(value)) {
+      if (!Array.isArray(links) || links.length > 10 || links.some((l) => !l || typeof l.href !== "string" || !/^https:\/\/[^\s]+$|^#\/[a-z-]+$/.test(l.href) || !l.label || !languages.every((lang) => typeof l.label[lang] === "string"))) throw TypeError("Invalid guide links");
+    }
+    this.#links = copy(value);
+    this.render();
   }
   get compact() {
     return this.#compact;
@@ -223,10 +237,10 @@ var AzrGuide = class extends ElementBase {
     }
     let body = `<h1>${t[this.#stage]}</h1><p>${this.#stage === "orientation" ? t.intro : t[this.#stage + "Intro"]}</p>`;
     if (this.#stage === "orientation") body += `<div class="grid">${[["deutschland", "germany", "\u{1F1E9}\u{1F1EA}"], ["ausland", "abroad", "\u{1F30D}"]].map(([value, key, icon]) => `<button type="button" class="card ${this.#journey.location === value ? "selected" : ""}" style="display:block;text-align:left" data-key="${value}" data-location="${value}" aria-pressed="${this.#journey.location === value}" ${disabled}><span style="font-size:30px" aria-hidden="true">${icon}</span><h2>${t[key]}</h2><p>${t[key + "Hint"]}</p></button>`).join("")}</div><p class="muted" role="status">${this.#journey.location ? t.location + ": " + t[this.#journey.location === "deutschland" ? "germany" : "abroad"] : t.choose}</p><div class="actions"><button type="button" class="primary" data-key="begin" data-route="2" ${this.busy || !this.#journey.location || !this.#available.includes(2) ? "disabled" : ""}>${t.begin} \u2192</button></div>`;
-    if (this.#stage !== "orientation") body += !items.length ? `<p class="notice" role="status">${t.empty}</p>` : `<p class="muted" role="status">${checked} / ${items.length} ${t.done}</p><progress aria-label="${t.done}" max="${items.length}" value="${checked}"></progress><ul class="list stack">${items.map((item) => `<li class="card"><label class="check"><input type="checkbox" data-key="${item.id}" data-check="${item.id}" ${this.#journey.checkedItems.includes(item.id) ? "checked" : ""} ${disabled}><span><strong>${esc(localeText(item.title, this.language))}</strong></span></label><details><summary>${t.details}</summary><div class="body">${esc(localeText(item.body, this.language))}</div></details></li>`).join("")}</ul>`;
+    if (this.#stage !== "orientation") body += !items.length ? `<p class="notice" role="status">${t.empty}</p>` : `<p class="muted" role="status">${checked} / ${items.length} ${t.done}</p><progress aria-label="${t.done}" max="${items.length}" value="${checked}"></progress><ul class="list stack">${items.map((item) => `<li class="card"><label class="check"><input type="checkbox" data-key="${item.id}" data-check="${item.id}" ${this.#journey.checkedItems.includes(item.id) ? "checked" : ""} ${disabled}><span><strong>${esc(localeText(item.title, this.language))}</strong></span></label><details data-key="guidance-${item.id}"><summary>${t.details}</summary><div class="body">${esc(localeText(item.body, this.language))}</div>${this.#links[item.id]?.length ? `<div class="actions">${this.#links[item.id].map((link) => `<a class="button" href="${esc(link.href)}" ${link.href.startsWith("https:") ? 'target="_blank" rel="noopener noreferrer"' : ""}>${esc(localeText(link.label, this.language))}${link.href.startsWith("https:") ? " \u2197" : " \u2192"}</a>`).join("")}</div>` : ""}</details></li>`).join("")}</ul>`;
     if (this.#stage === "preparation" && this.#showShortcuts) body += `<div class="actions">${[[3, "cv"], [4, "companies"], [5, "letter"]].map(([n, key]) => `<button type="button" class="${n === 3 ? "primary" : ""}" data-key="route-${n}" data-route="${n}" ${this.busy || !this.#available.includes(n) ? "disabled" : ""}>${t[key]} \u2192</button>`).join("")}</div>`;
     if (this.#stage === "start" && items.length) body += this.#journey.finished && checked === items.length && this.#journey.location ? `<p class="notice success" role="status">${t.finished}</p>` : `<div class="actions"><button type="button" class="primary" data-key="finish" data-finish ${this.busy || !this.#journey.location || checked !== items.length ? "disabled" : ""}>${t.finish}</button></div>`;
-    this.paint(`<style>.compact-orientation .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.compact-orientation [data-location]{padding:16px}.compact-orientation [data-location] [aria-hidden]{display:none}.compact-orientation [data-location] h2{font-size:18px;line-height:1.3;margin:0 0 8px}.compact-orientation [data-location] p{font-size:13px;line-height:1.45;margin:0}.compact-orientation h1{font-size:26px}</style><section class="${this.#compact && this.#stage === "orientation" ? "compact-orientation" : ""}" lang="${this.language}" aria-busy="${this.busy}">${this.busy ? `<p class="notice" role="status">${t.busy}</p>` : ""}${body}</section>`);
+    this.paint(`<style>.compact-orientation .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.compact-orientation [data-location]{padding:12px}.compact-orientation>p{font-size:14px;line-height:1.45;margin-bottom:16px}.compact-orientation [data-location] [aria-hidden]{display:none}.compact-orientation [data-location] h2{font-size:18px;line-height:1.3;margin:0 0 8px}.compact-orientation [data-location] p{font-size:13px;line-height:1.45;margin:0}.compact-orientation h1{font-size:26px}</style><section class="${this.#compact && this.#stage === "orientation" ? "compact-orientation" : ""}" lang="${this.language}" aria-busy="${this.busy}">${this.busy ? `<p class="notice" role="status">${t.busy}</p>` : ""}${body}</section>`);
   }
 };
 if (!customElements.get("azr-guide")) customElements.define("azr-guide", AzrGuide);

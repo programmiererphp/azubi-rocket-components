@@ -134,13 +134,20 @@ var AzrQuestionForm = class extends ElementBase {
   #complete() {
     return Boolean(this.#value.email.trim() && this.#value.question.trim() && this.#value.status && this.#value.consent);
   }
-  #changed() {
+  #changed(structural = true) {
     this.#operation++;
     this.#handoff = null;
     this.#message = "";
     this.#error = false;
     emit(this, "azr:question-change", { value: this.value });
-    this.render();
+    if (structural) this.render();
+    else {
+      const root = this.shadowRoot;
+      root.querySelector("[data-prepare]").disabled = !this.#services || !this.#complete();
+      root.querySelector("[data-copy]").disabled = !this.#value.question;
+      root.querySelector("[data-handoff]")?.closest(".notice")?.remove();
+      for (const notice of root.querySelectorAll(".notice[role=alert],.notice[role=status]")) notice.remove();
+    }
   }
   async #prepare() {
     if (this.busy || this.#preparing || !this.#services || !this.#complete() || !this.shadowRoot.querySelector("form").reportValidity()) return;
@@ -187,7 +194,7 @@ var AzrQuestionForm = class extends ElementBase {
     const t = e.target;
     if (e.type === "input" && t.dataset.field) {
       this.#value[t.dataset.field] = t.value;
-      this.#changed();
+      this.#changed(false);
     }
     if (e.type === "change" && t.dataset.field === "status") {
       this.#value.status = t.value;
@@ -204,8 +211,8 @@ var AzrQuestionForm = class extends ElementBase {
   }
   render() {
     const t = words[this.language], locked = this.busy || this.#preparing, disabled = locked ? "disabled" : "";
-    const input = (key, label, max, type = "text", required = "") => `<label>${label}<input type="${type}" data-key="${key}" data-field="${key}" maxlength="${max}" value="${esc(this.#value[key])}" ${required}></label>`;
-    this.paint(`<section lang="${this.language}"><h1>${t[0]}</h1><p>${t[1]}</p><form class="card"><fieldset ${disabled} style="border:0;padding:0;margin:0;min-width:0"><div class="grid">${input("name", t[2], 200)}${input("email", t[3], 254, "email", "required")}</div><div class="grid">${input("whatsapp", t[4], 100, "tel")}<label>${t[5]}<select data-key="status" data-field="status" required><option value="">${t[6]}</option>${statusIds.map((id, i) => `<option value="${id}" ${this.#value.status === id ? "selected" : ""}>${t[19][i]}</option>`).join("")}</select></label></div><label>${t[7]}<textarea data-key="question" data-field="question" maxlength="4000" required style="min-height:180px">${esc(this.#value.question)}</textarea></label><label class="check"><input type="checkbox" data-key="consent" data-consent ${this.#value.consent ? "checked" : ""} required><span>${t[8]}</span></label><div class="actions"><button type="button" class="primary" data-key="prepare" data-prepare ${locked || !this.#services || !this.#complete() ? "disabled" : ""}>${this.#preparing ? t[10] : t[9]}</button><button type="button" data-copy ${locked || !this.#value.question ? "disabled" : ""}>${t[14]}</button></div></fieldset></form>${!this.#services ? `<p class="notice">${t[17]}</p>` : ""}${this.#preparing ? `<p role="status" class="notice">${t[10]}</p>` : ""}${this.#handoff ? `<div class="notice" role="status"><p>${t[12]}</p>${!this.#handoff.prefilled ? `<p>${t[13]}</p>` : ""}<a class="button" data-handoff href="${esc(this.#handoff.url)}" target="_blank" rel="noopener noreferrer">${t[11]} \u2197</a></div>` : ""}${this.#message ? `<p class="notice ${this.#error ? "error" : "success"}" role="${this.#error ? "alert" : "status"}">${esc(this.#message)}</p>` : ""}</section>`);
+    const input = (key, label, max, type = "text", required = "") => `<label>${label}<input type="${type}" ${type === "email" ? 'inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="email"' : ""} data-key="${key}" data-field="${key}" maxlength="${max}" value="${esc(this.#value[key])}" ${required}></label>`;
+    this.paint(`<style>input,textarea,select{font-size:16px}</style><section lang="${this.language}"><h1>${t[0]}</h1><p>${t[1]}</p><form class="card"><fieldset ${disabled} style="border:0;padding:0;margin:0;min-width:0"><div class="grid">${input("name", t[2], 200)}${input("email", t[3], 254, "email", "required")}</div><div class="grid">${input("whatsapp", t[4], 100, "tel")}<label>${t[5]}<select data-key="status" data-field="status" required><option value="">${t[6]}</option>${statusIds.map((id, i) => `<option value="${id}" ${this.#value.status === id ? "selected" : ""}>${t[19][i]}</option>`).join("")}</select></label></div><label>${t[7]}<textarea data-key="question" data-field="question" maxlength="4000" required style="min-height:180px">${esc(this.#value.question)}</textarea></label><label class="check"><input type="checkbox" data-key="consent" data-consent ${this.#value.consent ? "checked" : ""} required><span>${t[8]}</span></label><div class="actions"><button type="button" class="primary" data-key="prepare" data-prepare ${locked || !this.#services || !this.#complete() ? "disabled" : ""}>${this.#preparing ? t[10] : t[9]}</button><button type="button" data-copy ${locked || !this.#value.question ? "disabled" : ""}>${t[14]}</button></div></fieldset></form>${!this.#services ? `<p class="notice">${t[17]}</p>` : ""}${this.#preparing ? `<p role="status" class="notice">${t[10]}</p>` : ""}${this.#handoff ? `<div class="notice" role="status"><p>${t[12]}</p>${!this.#handoff.prefilled ? `<p>${t[13]}</p>` : ""}<a class="button" data-handoff href="${esc(this.#handoff.url)}" target="_blank" rel="noopener noreferrer">${t[11]} \u2197</a></div>` : ""}${this.#message ? `<p class="notice ${this.#error ? "error" : "success"}" role="${this.#error ? "alert" : "status"}">${esc(this.#message)}</p>` : ""}</section>`);
     this.shadowRoot.querySelector("form")?.addEventListener("submit", (e) => {
       e.preventDefault();
       this.#prepare();

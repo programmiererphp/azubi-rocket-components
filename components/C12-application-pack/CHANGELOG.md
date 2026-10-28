@@ -3,3 +3,6 @@ German application outcome: reviewed recipient/text, ordered certificates, actua
 
 ## 0.1.1
 Disable file and review controls until saved files finish loading, preventing selection against a replaced file input.
+
+## 0.1.2
+User visual review: stable mobile input, explicit navigation and preserved context where applicable. CV adds five guided sections and an always visible preview; preparation supports validated guidance links and preserves open details.

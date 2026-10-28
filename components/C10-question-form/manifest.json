@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "component_id": "C10",
   "custom_element": "azr-question-form",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": true,
+  "public_anonymous_fetch_verified": false,
   "entrypoints": {
     "esm": "dist/index.js",
-    "sha256": "2917625da8bdf78808d592e7b783102d3bbb227c1a5fa96efa4353bc93b42aa0"
+    "sha256": "eb0800129ed92babdea280ceed26d5d008e289e4d1316a045aa316813f5cd2c6"
   },
   "input_attributes": [
     {
