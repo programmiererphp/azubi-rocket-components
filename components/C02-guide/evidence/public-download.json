@@ -1,24 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/2750190bac286053861ea919291c3435c97f4cf5/components/C02-guide/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/7d11f287e00b599950227972994cbf25451184e7/components/C02-guide/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "sha256": "d69af9deaf225864abae2b2188ee03b352901b850f2faa95f6e092d2bf14a593",
-  "bytes": 22044,
-  "commit_sha": "2750190bac286053861ea919291c3435c97f4cf5",
-  "recorded_at_utc": "2026-10-28T09:47:54.170289+00:00",
+  "sha256": "f1c062909e130aa2769285e12b4336f25e5ecee1c21eccb09ff97022f5fc254c",
+  "bytes": 23376,
+  "commit_sha": "7d11f287e00b599950227972994cbf25451184e7",
+  "recorded_at_utc": "2026-10-28T12:19:34.923268+00:00",
   "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
   "checks": [
     {
-      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/2750190bac286053861ea919291c3435c97f4cf5/components/C02-guide/dist/index.js",
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/7d11f287e00b599950227972994cbf25451184e7/components/C02-guide/dist/index.js",
       "status": 200,
-      "bytes": 22044,
-      "sha256": "d69af9deaf225864abae2b2188ee03b352901b850f2faa95f6e092d2bf14a593"
+      "bytes": 23376,
+      "sha256": "f1c062909e130aa2769285e12b4336f25e5ecee1c21eccb09ff97022f5fc254c"
     },
     {
       "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C02-guide/dist/index.js",
       "status": 200,
-      "bytes": 22044,
-      "sha256": "d69af9deaf225864abae2b2188ee03b352901b850f2faa95f6e092d2bf14a593"
+      "bytes": 23376,
+      "sha256": "f1c062909e130aa2769285e12b4336f25e5ecee1c21eccb09ff97022f5fc254c"
     }
   ]
 }

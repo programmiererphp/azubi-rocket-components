@@ -1,24 +1,24 @@
 {
-  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/658f61ca96eb293c0f4b3845a4e53c3b48280513/components/C01-journey-nav/dist/index.js",
+  "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/7d11f287e00b599950227972994cbf25451184e7/components/C01-journey-nav/dist/index.js",
   "reachable_anonymously": true,
   "http_status": 200,
-  "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1",
-  "bytes": 12699,
-  "commit_sha": "658f61ca96eb293c0f4b3845a4e53c3b48280513",
-  "recorded_at_utc": "2026-10-27T16:37:29.719994+00:00",
+  "sha256": "1ebf2ba9be8a207b5d902cb3388af78f5a6279f2d49bb9081eb8eb5ef76b9910",
+  "bytes": 12744,
+  "commit_sha": "7d11f287e00b599950227972994cbf25451184e7",
+  "recorded_at_utc": "2026-10-28T12:19:35.151538+00:00",
   "method": "GitHub Actions Python HTTPS GET without Authorization/cookies, default TLS verification; exact raw and Pages hashes; separate fresh-Chromium published browser tests",
   "checks": [
     {
-      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/658f61ca96eb293c0f4b3845a4e53c3b48280513/components/C01-journey-nav/dist/index.js",
+      "url": "https://raw.githubusercontent.com/programmiererphp/azubi-rocket-components/7d11f287e00b599950227972994cbf25451184e7/components/C01-journey-nav/dist/index.js",
       "status": 200,
-      "bytes": 12699,
-      "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1"
+      "bytes": 12744,
+      "sha256": "1ebf2ba9be8a207b5d902cb3388af78f5a6279f2d49bb9081eb8eb5ef76b9910"
     },
     {
       "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C01-journey-nav/dist/index.js",
       "status": 200,
-      "bytes": 12699,
-      "sha256": "a4374229c704462e92fd5fa483955606bd8b0269ec420c3d1e83e2f3f00040c1"
+      "bytes": 12744,
+      "sha256": "1ebf2ba9be8a207b5d902cb3388af78f5a6279f2d49bb9081eb8eb5ef76b9910"
     }
   ]
 }
