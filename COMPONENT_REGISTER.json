@@ -77,9 +77,9 @@
       "name": "letter-editor",
       "tag": "azr-letter-editor",
       "path": "components/C05-letter-editor/manifest.json",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "status": "GITHUB_VERIFIED",
-      "git_commit_sha": "6a88636d63840868f19b3693b5fff7144975fe7c",
+      "git_commit_sha": "e7f68e72a04212e912c5143fcd7d278b33e307a2",
       "evidence_refs": [
         "evidence/test-results.json",
         "evidence/published-test-results.json",

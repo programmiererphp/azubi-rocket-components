@@ -4,7 +4,7 @@
   "custom_element": "azr-letter-editor",
   "version": "0.2.1",
   "public_github_repo": "programmiererphp/azubi-rocket-components",
-  "public_anonymous_fetch_verified": false,
+  "public_anonymous_fetch_verified": true,
   "entrypoints": {
     "esm": "dist/index.js",
     "sha256": "9e36d950638f170fc70541d3df021ba8a5677e3c4a1cbf35917ea00a92a4462a"
