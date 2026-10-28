@@ -13,13 +13,14 @@ export class AzrCVEditor extends ElementBase{
  #data=empty();#services=null;#tab='personal';#exporting=false;#photoBusy=false;#message='';#error=false;#operation=0;#urls=new Map();
  upgradeProperties=['cvData','services','language','busy','documentLanguage','step'];
  get documentLanguage(){return this.#documentLanguage??this.language;}set documentLanguage(v){if(v!==null&&!Object.hasOwn(words,v))throw new TypeError('Invalid document language');this.#documentLanguage=v;this.render();}
+ focusStep(){this.shadowRoot.querySelector('[data-step-heading]')?.focus({preventScroll:true});this.shadowRoot.querySelector('.editor-panel')?.scrollIntoView({block:'start',behavior:'instant'});}
  get step(){return this.#tab;}set step(v){if(!['personal','education','experience','skills','review'].includes(v))throw TypeError('Invalid CV step');this.#tab=v;this.render();}
  get cvData(){return copy(this.#data);}set cvData(v){this.#data=normalizeCV(v);this.render();}
  get services(){return this.#services;}set services(v){if(v!==null&&(!v||typeof v.exportDocument!=='function'))throw new TypeError('Invalid export service');this.#services=v;this.render();}
  disconnectedCallback(){super.disconnectedCallback();this.#operation++;for(const[url,timer]of this.#urls){clearTimeout(timer);URL.revokeObjectURL(url);}this.#urls.clear();this.#exporting=false;}
  #previewHTML(){const model=cvDocument(this.#data,this.documentLanguage),t=words[this.language];return `${model.photo?`<img class="cv-photo" src="${model.photo}" alt="">`:''}<h2>${esc(model.title||t.cv)}</h2><p class="muted">${esc(model.subtitle)}</p><p class="muted body">${esc(model.contact)}</p>${model.sections.filter(s=>s.body.trim()).map(s=>`<h3>${esc(s.heading)}</h3><div class="body">${esc(s.body)}</div>`).join('')}`;}
  #changed(structural=true){emit(this,'azr:cv-change',{cvData:this.cvData});if(structural)this.render();else{const preview=this.shadowRoot.querySelector('.preview');if(preview)preview.innerHTML=this.#previewHTML();this.#message='';const message=this.shadowRoot.querySelector('[data-validation]');if(message)message.textContent='';}}
- #go(step){this.#tab=step;this.#message='';this.render();emit(this,'azr:cv-step-change',{step});this.shadowRoot.querySelector('[data-step-heading]')?.focus({preventScroll:true});this.shadowRoot.querySelector('.editor-panel')?.scrollIntoView({block:'start',behavior:'instant'});}
+ #go(step){this.#tab=step;this.#message='';this.render();emit(this,'azr:cv-step-change',{step});this.focusStep();}
  #next(){const keys=['personal','education','experience','skills','review'],t=wizard[this.language];
   if(this.#tab==='personal'){const invalid=this.shadowRoot.querySelector('form input:invalid');if(invalid){invalid.reportValidity();return;}}
   if(this.#tab==='education'&&!this.#data.education.some(r=>r.period.trim()&&r.institution.trim())){this.#message=t.needSchool;this.#error=true;this.render();this.shadowRoot.querySelector('[data-row-field=institution]')?.focus();return;}

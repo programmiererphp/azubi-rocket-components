@@ -157,6 +157,10 @@ var AzrCVEditor = class extends ElementBase {
     this.#documentLanguage = v;
     this.render();
   }
+  focusStep() {
+    this.shadowRoot.querySelector("[data-step-heading]")?.focus({ preventScroll: true });
+    this.shadowRoot.querySelector(".editor-panel")?.scrollIntoView({ block: "start", behavior: "instant" });
+  }
   get step() {
     return this.#tab;
   }
@@ -210,8 +214,7 @@ var AzrCVEditor = class extends ElementBase {
     this.#message = "";
     this.render();
     emit(this, "azr:cv-step-change", { step });
-    this.shadowRoot.querySelector("[data-step-heading]")?.focus({ preventScroll: true });
-    this.shadowRoot.querySelector(".editor-panel")?.scrollIntoView({ block: "start", behavior: "instant" });
+    this.focusStep();
   }
   #next() {
     const keys = ["personal", "education", "experience", "skills", "review"], t = wizard[this.language];
