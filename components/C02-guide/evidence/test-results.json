@@ -1,15 +1,15 @@
 {
   "component": "C02",
-  "version": "0.1.0",
-  "artifact_sha256": "5246dbfb532a832c2fc58e2d8103b090c5e9ae9b819cb188f12db5b5b1d7ac1b",
+  "version": "0.2.0",
+  "artifact_sha256": "d69af9deaf225864abae2b2188ee03b352901b850f2faa95f6e092d2bf14a593",
   "passed": true,
-  "url": "http://127.0.0.1:35671/demo/index.html",
-  "recorded_at_utc": "2026-10-21T15:43:08.282Z",
+  "url": "http://127.0.0.1:33471/demo/index.html",
+  "recorded_at_utc": "2026-10-28T09:47:34.820Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
-  "test_count": 26,
-  "passed_count": 26,
+  "test_count": 28,
+  "passed_count": 28,
   "results": [
     {
       "name": "Identity, meaningful component and exact artifact hash",
@@ -105,6 +105,14 @@
     },
     {
       "name": "Content treated as text; loading, error and empty states are real",
+      "passed": true
+    },
+    {
+      "name": "Compact orientation keeps both named choices on the same row at 320px in all languages",
+      "passed": true
+    },
+    {
+      "name": "Host may remove preparation shortcuts without removing checklist or changing defaults",
       "passed": true
     },
     {
