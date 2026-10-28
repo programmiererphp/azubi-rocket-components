@@ -1,10 +1,10 @@
 {
   "component": "C05",
-  "version": "0.2.0",
-  "artifact_sha256": "eed0a4850a4c0661401a3b233f041eea395188fc5195753138d510604b46984e",
+  "version": "0.2.1",
+  "artifact_sha256": "9e36d950638f170fc70541d3df021ba8a5677e3c4a1cbf35917ea00a92a4462a",
   "passed": true,
   "url": "https://programmiererphp.github.io/azubi-rocket-components/components/C05-letter-editor/demo/index.html",
-  "recorded_at_utc": "2026-10-27T16:44:54.568Z",
+  "recorded_at_utc": "2026-10-28T11:37:26.814Z",
   "browser": "151.0.7922.34",
   "browser_plugin": "not available",
   "fallback_reason": "Browser plugin not available; isolated regular Playwright",
